@@ -14,6 +14,8 @@
 		38C14D1F2052CA7300F1A7D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38C14D1D2052CA7300F1A7D4 /* LaunchScreen.storyboard */; };
 		38C14D2A2052CA7300F1A7D4 /* SportsFunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C14D292052CA7300F1A7D4 /* SportsFunTests.swift */; };
 		38C14D352052CA7300F1A7D4 /* SportsFunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C14D342052CA7300F1A7D4 /* SportsFunUITests.swift */; };
+		38C14D462052D24900F1A7D4 /* Connexion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C14D452052D24900F1A7D4 /* Connexion.swift */; };
+		38C14D482052DE5E00F1A7D4 /* Inscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C14D472052DE5E00F1A7D4 /* Inscription.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		38C14D302052CA7300F1A7D4 /* SportsFunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsFunUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38C14D342052CA7300F1A7D4 /* SportsFunUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsFunUITests.swift; sourceTree = "<group>"; };
 		38C14D362052CA7300F1A7D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38C14D452052D24900F1A7D4 /* Connexion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connexion.swift; sourceTree = "<group>"; };
+		38C14D472052DE5E00F1A7D4 /* Inscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inscription.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +101,11 @@
 		38C14D132052CA7300F1A7D4 /* SportsFun */ = {
 			isa = PBXGroup;
 			children = (
+				38C14D442052CBE600F1A7D4 /* Controllers */,
+				38C14D432052CBDF00F1A7D4 /* Views */,
+				38C14D422052CBD500F1A7D4 /* Models */,
 				38C14D142052CA7300F1A7D4 /* AppDelegate.swift */,
-				38C14D162052CA7300F1A7D4 /* ViewController.swift */,
-				38C14D182052CA7300F1A7D4 /* Main.storyboard */,
 				38C14D1B2052CA7300F1A7D4 /* Assets.xcassets */,
-				38C14D1D2052CA7300F1A7D4 /* LaunchScreen.storyboard */,
 				38C14D202052CA7300F1A7D4 /* Info.plist */,
 			);
 			path = SportsFun;
@@ -123,6 +127,32 @@
 				38C14D362052CA7300F1A7D4 /* Info.plist */,
 			);
 			path = SportsFunUITests;
+			sourceTree = "<group>";
+		};
+		38C14D422052CBD500F1A7D4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		38C14D432052CBDF00F1A7D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				38C14D1D2052CA7300F1A7D4 /* LaunchScreen.storyboard */,
+				38C14D182052CA7300F1A7D4 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		38C14D442052CBE600F1A7D4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				38C14D162052CA7300F1A7D4 /* ViewController.swift */,
+				38C14D452052D24900F1A7D4 /* Connexion.swift */,
+				38C14D472052DE5E00F1A7D4 /* Inscription.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +290,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				38C14D172052CA7300F1A7D4 /* ViewController.swift in Sources */,
+				38C14D462052D24900F1A7D4 /* Connexion.swift in Sources */,
+				38C14D482052DE5E00F1A7D4 /* Inscription.swift in Sources */,
 				38C14D152052CA7300F1A7D4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
