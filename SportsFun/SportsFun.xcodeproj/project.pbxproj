@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380485F1205D6FEE0029A52A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380485F0205D6FEE0029A52A /* Login.swift */; };
+		38907BAE205C4149000944C7 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38907BAD205C4149000944C7 /* Networking.swift */; };
+		38B847F9205EA24800B02CFF /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B847F8205EA24800B02CFF /* UserInfo.swift */; };
+		38B847FB205EACB900B02CFF /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B847FA205EACB900B02CFF /* Date.swift */; };
 		38C14D152052CA7300F1A7D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C14D142052CA7300F1A7D4 /* AppDelegate.swift */; };
 		38C14D172052CA7300F1A7D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C14D162052CA7300F1A7D4 /* ViewController.swift */; };
 		38C14D1A2052CA7300F1A7D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38C14D182052CA7300F1A7D4 /* Main.storyboard */; };
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		380485F0205D6FEE0029A52A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		38907BAD205C4149000944C7 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		38B847F8205EA24800B02CFF /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		38B847FA205EACB900B02CFF /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		38C14D112052CA7300F1A7D4 /* SportsFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38C14D142052CA7300F1A7D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38C14D162052CA7300F1A7D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38907BAC205C412D000944C7 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				38907BAD205C4149000944C7 /* Networking.swift */,
+				38B847FA205EACB900B02CFF /* Date.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		38C14D082052CA7300F1A7D4 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +118,7 @@
 		38C14D132052CA7300F1A7D4 /* SportsFun */ = {
 			isa = PBXGroup;
 			children = (
+				38907BAC205C412D000944C7 /* Tools */,
 				38C14D442052CBE600F1A7D4 /* Controllers */,
 				38C14D432052CBDF00F1A7D4 /* Views */,
 				38C14D422052CBD500F1A7D4 /* Models */,
@@ -132,6 +150,8 @@
 		38C14D422052CBD500F1A7D4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				380485F0205D6FEE0029A52A /* Login.swift */,
+				38B847F8205EA24800B02CFF /* UserInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -290,9 +310,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				38C14D172052CA7300F1A7D4 /* ViewController.swift in Sources */,
+				380485F1205D6FEE0029A52A /* Login.swift in Sources */,
+				38907BAE205C4149000944C7 /* Networking.swift in Sources */,
+				38B847FB205EACB900B02CFF /* Date.swift in Sources */,
 				38C14D462052D24900F1A7D4 /* Connexion.swift in Sources */,
 				38C14D482052DE5E00F1A7D4 /* Inscription.swift in Sources */,
 				38C14D152052CA7300F1A7D4 /* AppDelegate.swift in Sources */,
+				38B847F9205EA24800B02CFF /* UserInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
