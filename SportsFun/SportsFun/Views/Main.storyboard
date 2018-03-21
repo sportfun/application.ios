@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Account Details-->
+        <scene sceneID="EJD-eQ-y6O">
+            <objects>
+                <viewController storyboardIdentifier="Main" id="YeE-qi-H16" customClass="AccountDetails" customModule="SportsFun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QzX-qY-Aas">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IYI-4Q-Nvy">
+                                <rect key="frame" x="10" y="50" width="355" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YxV-m7-6MX">
+                                <rect key="frame" x="10" y="110" width="355" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zME-u7-nGk">
+                                <rect key="frame" x="10" y="170" width="355" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IYI-4Q-Nvy" firstAttribute="top" secondItem="Dcc-uM-hk9" secondAttribute="top" constant="30" id="42m-Sl-uig"/>
+                            <constraint firstItem="Dcc-uM-hk9" firstAttribute="trailing" secondItem="YxV-m7-6MX" secondAttribute="trailing" constant="10" id="4iu-6Q-W7k"/>
+                            <constraint firstItem="YxV-m7-6MX" firstAttribute="centerX" secondItem="QzX-qY-Aas" secondAttribute="centerX" id="Afb-Lw-T2m"/>
+                            <constraint firstItem="Dcc-uM-hk9" firstAttribute="trailing" secondItem="IYI-4Q-Nvy" secondAttribute="trailing" constant="10" id="Eek-ru-uxx"/>
+                            <constraint firstItem="IYI-4Q-Nvy" firstAttribute="centerX" secondItem="QzX-qY-Aas" secondAttribute="centerX" id="T5R-J7-rA5"/>
+                            <constraint firstItem="YxV-m7-6MX" firstAttribute="top" secondItem="IYI-4Q-Nvy" secondAttribute="bottom" constant="30" id="UcU-gK-xPI"/>
+                            <constraint firstItem="zME-u7-nGk" firstAttribute="leading" secondItem="Dcc-uM-hk9" secondAttribute="leading" constant="10" id="dde-Qe-GRM"/>
+                            <constraint firstItem="YxV-m7-6MX" firstAttribute="leading" secondItem="Dcc-uM-hk9" secondAttribute="leading" constant="10" id="ehs-E7-hbh"/>
+                            <constraint firstItem="zME-u7-nGk" firstAttribute="centerX" secondItem="QzX-qY-Aas" secondAttribute="centerX" id="eja-qD-hv2"/>
+                            <constraint firstItem="IYI-4Q-Nvy" firstAttribute="leading" secondItem="Dcc-uM-hk9" secondAttribute="leading" constant="10" id="pOR-nj-TtY"/>
+                            <constraint firstItem="zME-u7-nGk" firstAttribute="top" secondItem="YxV-m7-6MX" secondAttribute="bottom" constant="30" id="wbm-4d-uGg"/>
+                            <constraint firstItem="Dcc-uM-hk9" firstAttribute="trailing" secondItem="zME-u7-nGk" secondAttribute="trailing" constant="10" id="xgg-dG-j9W"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dcc-uM-hk9"/>
+                    </view>
+                    <connections>
+                        <outlet property="firstName" destination="YxV-m7-6MX" id="KXd-fr-dBG"/>
+                        <outlet property="lastName" destination="zME-u7-nGk" id="kbo-T5-7UU"/>
+                        <outlet property="userName" destination="IYI-4Q-Nvy" id="6dM-y3-qhA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AZv-cL-oej" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-144" y="-108"/>
+        </scene>
+    </scenes>
+</document>

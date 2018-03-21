@@ -13,7 +13,7 @@
         <!--Inscription-->
         <scene sceneID="Js7-h4-kKc">
             <objects>
-                <viewController id="FrU-pu-m8W" customClass="Inscription" customModule="SportsFun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginRegister" id="FrU-pu-m8W" customClass="Inscription" customModule="SportsFun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dyu-C5-QA4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
