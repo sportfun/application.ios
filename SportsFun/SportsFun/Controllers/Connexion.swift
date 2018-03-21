@@ -15,12 +15,10 @@ class Connexion : UIViewController {
     @IBOutlet var tfPassword : UITextField!
     @IBOutlet var bConnection : UIButton!
     @IBOutlet var lError : UILabel!
-    var IPAdress : String
     let networking : Networking
     
     required init?(coder decoder: NSCoder) {
-        self.IPAdress = "http://149.202.41.22:8080"
-        self.networking = Networking()
+        self.networking = Networking(token: "")
         
         super.init(coder : decoder)
     }
@@ -34,8 +32,8 @@ class Connexion : UIViewController {
     @IBAction func clicConnexion(sender : UIButton) {
         lError.text = ""
         if let userName = tfUserName.text, let password = tfPassword.text, userName != "" && password != "" {
-            var url : String =  "\(self.IPAdress)/api/user/login"
-            var param : String = "username=\(userName)&password=\(password)"
+            var url : String =  "/user/login"
+            let param : String = "username=\(userName)&password=\(password)"
             self.networking.querryWithPost(urlString : url, param: param) { data in
                 if let data = data {
                     do {
@@ -45,23 +43,21 @@ class Connexion : UIViewController {
                             self.lError.text = parsedLogin.message
                         } else {
                             if let token = parsedLogin.data?.token {
-                                url = "\(self.IPAdress)/api/user"
-                                param = "\(token)"
-                                self.networking.querryWithGet(urlString: url, token: param) { data in
+                                url = "/user"
+                                self.networking.token = token
+                                self.networking.querryWithGet(urlString: url) { data in
                                     if let data = data {
                                         do {
                                             let parsedUser = try decoder.decode(UserInfo.self, from: data)
                                             if parsedUser.success == false {
                                                 self.lError.text = "Une erreur c'est produite lors de votre connexion veuillez patienter"
                                             } else {
-                                                print(parsedUser)
                                                 if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
                                                     let fileURL = documentDirectory.appendingPathComponent("token.txt")
                                                     try token.write(to: fileURL, atomically: false, encoding: .utf8)
-                                                    // reading from disk
-//                                                    let savedText = try String(contentsOf: fileURL)
-//                                                    print("savedText:", savedText)
-                                                    //TODO : faire la connexion et établir un moyen d'ouvrir la fenetre d'après
+                                                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                                    let vc = storyboard.instantiateViewController(withIdentifier: "Main")
+                                                    self.present(vc, animated: true, completion: nil)
                                                 }
                                             }
                                         } catch {
@@ -78,7 +74,7 @@ class Connexion : UIViewController {
                 }
             }
         } else {
-            
+            lError.text = "Veuillez rentrer vos identifiants"
         }
     }
     
