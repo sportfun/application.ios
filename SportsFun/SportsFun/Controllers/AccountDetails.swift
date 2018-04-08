@@ -21,7 +21,6 @@ class AccountDetails: UIViewController {
     var userInfo : userInfoData!
     
     required init?(coder decoder: NSCoder) {
-        print("prout")
         self.networking = Networking(token: "")
         do {
             if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
@@ -37,7 +36,6 @@ class AccountDetails: UIViewController {
     }
     
     override func viewDidLoad() {
-        print("caca")
         super.viewDidLoad()
         
         let url : String = "/user"
