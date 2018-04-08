@@ -19,12 +19,43 @@ class Connexion : UIViewController {
     
     required init?(coder decoder: NSCoder) {
         self.networking = Networking(token: "")
+        do {
+            if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+                let fileURL = documentDirectory.appendingPathComponent("token.txt")
+                let token = try String(contentsOf: fileURL)
+                self.networking.token = token
+            }
+        } catch {
+            print("error:", error)
+        }
         
         super.init(coder : decoder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(self.networking.token)
+        if self.networking.token != "" {
+            let url : String = "/user"
+            self.networking.querryWithGet(urlString: url) { data in
+                if let data = data {
+                    do {
+                        let decoder = JSONDecoder()
+                        let parsedUser = try decoder.decode(UserInfo.self, from: data)
+                        if parsedUser.success == false {
+                            return
+                        } else {
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let vc = storyboard.instantiateViewController(withIdentifier: "Main")
+                            self.present(vc, animated: true, completion: nil)
+                        }
+                    } catch {
+                        print("error:", error)
+                    }
+                }
+            }
+        }
         
         lError.text = ""
     }
