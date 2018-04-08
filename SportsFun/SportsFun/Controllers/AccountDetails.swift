@@ -10,9 +10,13 @@ import Foundation
 import UIKit
 
 class AccountDetails: UIViewController {
-    @IBOutlet var userName : UITextField!
-    @IBOutlet var firstName : UITextField!
-    @IBOutlet var lastName : UITextField!
+    @IBOutlet var tfUserName : UITextField!
+    @IBOutlet var tfEmail : UITextField!
+    @IBOutlet var tfFirstName : UITextField!
+    @IBOutlet var tfLastName : UITextField!
+    @IBOutlet var tfBio : UITextField!
+    @IBOutlet var tfGoal : UITextField!
+    
     var networking: Networking
     var userInfo : userInfoData!
     
@@ -44,9 +48,12 @@ class AccountDetails: UIViewController {
                        print("")
                     } else {
                         self.userInfo = userInfo.data
-                        self.userName.text = self.userInfo.username
-                        self.firstName.text = self.userInfo.firstName
-                        self.lastName.text = self.userInfo.lastName
+                        self.tfUserName.text = self.userInfo.username
+                        self.tfEmail.text = self.userInfo.email
+                        self.tfFirstName.text = self.userInfo.firstName
+                        self.tfLastName.text = self.userInfo.lastName
+                        self.tfGoal.text = String(self.userInfo.goal)
+                        self.tfBio.text = self.userInfo.bio
                     }
                 } catch {
                     print("error:", error)
