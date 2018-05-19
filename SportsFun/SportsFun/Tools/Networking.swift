@@ -18,6 +18,28 @@ class Networking {
         self.IPAdress = "http://149.202.41.22:8080/api"
     }
     
+    func querryWithPut(urlString : String, param: String, completion: @escaping QuerryResult) {
+        let url = URL(string: "\(self.IPAdress)\(urlString)")!
+        var request = URLRequest(url: url)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.addValue("\(self.token)", forHTTPHeaderField: "token")
+        request.httpMethod = "PUT"
+        let param = "\(param)"
+        request.httpBody = param.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print("no connection detected: ", error!)
+                return
+            }
+                        let responseString = String(data: data, encoding: .utf8)
+                        print("responseString = \(String(describing: responseString))")
+            DispatchQueue.main.async {
+                completion(data)
+            }
+        }
+        task.resume()
+    }
+    
     func querryWithPost(urlString : String, param: String, completion: @escaping QuerryResult) {
         let url = URL(string: "\(self.IPAdress)\(urlString)")!
         var request = URLRequest(url: url)
@@ -25,8 +47,6 @@ class Networking {
         request.httpMethod = "POST"
         let param = "\(param)"
         request.httpBody = param.data(using: .utf8)
-        print(param)
-        print(url)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 print("no connection detected: ", error!)

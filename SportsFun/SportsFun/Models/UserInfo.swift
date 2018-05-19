@@ -21,17 +21,17 @@ struct UserInfo: Decodable {
 }
 
 struct userInfoData: Decodable {
-    let bio: String
-    let profilePic: String
-    let coverPic: String
-    let goal: Int
+    var bio: String
+    var profilePic: String
+    var coverPic: String
+    var goal: Int
     let _id: String
-    let username: String
-    let email: String
-    let firstName: String
-    let lastName: String
-    let birthDate: String
-    let password: String
+    var username: String
+    var email: String
+    var firstName: String
+    var lastName: String
+    var birthDate: String
+    var password: String
     
     private enum CodingKeys: String, CodingKey {
         case bio = "bio"

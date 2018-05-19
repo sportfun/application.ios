@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 
 class AccountDetails: UIViewController {
-    @IBOutlet var tfUserName : UITextField!
-    @IBOutlet var tfEmail : UITextField!
-    @IBOutlet var tfFirstName : UITextField!
-    @IBOutlet var tfLastName : UITextField!
-    @IBOutlet var tfBio : UITextField!
-    @IBOutlet var tfGoal : UITextField!
+//    @IBOutlet var tfUserName : UITextField!
+//    @IBOutlet var tfEmail : UITextField!
+//    @IBOutlet var tfFirstName : UITextField!
+//    @IBOutlet var tfLastName : UITextField!
+//    @IBOutlet var tfBio : UITextField!
+//    @IBOutlet var tfGoal : UITextField!
     
     var networking: Networking
     var userInfo : userInfoData!
@@ -47,13 +47,15 @@ class AccountDetails: UIViewController {
                     if userInfo.success == false {
                        print("")
                     } else {
-                        self.userInfo = userInfo.data
-                        self.tfUserName.text = self.userInfo.username
-                        self.tfEmail.text = self.userInfo.email
-                        self.tfFirstName.text = self.userInfo.firstName
-                        self.tfLastName.text = self.userInfo.lastName
-                        self.tfGoal.text = String(self.userInfo.goal)
-                        self.tfBio.text = self.userInfo.bio
+//                        self.userInfo = userInfo.data
+//                        self.tfUserName.text = self.userInfo.username
+//                        self.tfEmail.text = self.userInfo.email
+//                        self.tfFirstName.text = self.userInfo.firstName
+//                        self.tfLastName.text = self.userInfo.lastName
+//                        self.tfGoal.text = String(self.userInfo.goal)
+//                        self.userInfo.bio.removeFirst()
+//                        self.userInfo.bio.removeLast()
+//                        self.tfBio.text = self.userInfo.bio
                     }
                 } catch {
                     print("error:", error)

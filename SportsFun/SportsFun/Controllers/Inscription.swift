@@ -32,7 +32,7 @@ class Inscription : UIViewController {
         lError.text = ""
     }
     
-    @IBAction func clicConfirm(sender : UIButton) {
+    @IBAction func clicConfirm(sender: UIButton) {
         let stringFromDate = dpBirthdate.date.iso8601
         lError.text = ""
         if let birthDate = stringFromDate.dateFromISO8601 {
