@@ -35,7 +35,6 @@ class Connexion : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(self.networking.token)
         if self.networking.token != "" {
             let url : String = "/user"
             self.networking.querryWithGet(urlString: url) { data in
