@@ -42,7 +42,7 @@ class Password : UIViewController {
     @IBAction func clicConfirmer(sender: UIButton) {
         if let pPassword = tPPassword.text, let nPassword = tNPassword.text, let RPassword = tRPassword.text, pPassword != "" && nPassword != "" && RPassword != "" {
             if nPassword == RPassword {
-                let url : String =  "/user"
+                let url : String =  "/user/password"
                 let param : String = "password=\(pPassword)&newPassword=\(nPassword)"
                 self.networking.querryWithPut(urlString : url, param: param) { data in
                     if let data = data {
