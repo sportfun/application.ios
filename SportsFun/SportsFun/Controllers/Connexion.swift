@@ -84,7 +84,9 @@ class Connexion : UIViewController {
                                             } else {
                                                 if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
                                                     let fileURL = documentDirectory.appendingPathComponent("token.txt")
+//                                                    let fileURL2 = documentDirectory.appendingPathComponent("id.txt")
                                                     try token.write(to: fileURL, atomically: false, encoding: .utf8)
+//                                                    try parsedUser.data?._id.write(to: fileURL2, atomically: false, encoding: .utf8)
                                                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                                                     let vc = storyboard.instantiateViewController(withIdentifier: "Main")
                                                     self.present(vc, animated: true, completion: nil)
