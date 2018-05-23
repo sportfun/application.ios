@@ -304,18 +304,20 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3sZ-eI-Pwk">
-                                            <rect key="frame" x="12" y="129" width="351" height="30"/>
+                                            <rect key="frame" x="12" y="129" width="351" height="24"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ruu-qb-mW5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="175.5" height="30"/>
-                                                    <state key="normal" title="J'aime">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ruu-qb-mW5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="175.5" height="24"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="J'aime" image="like">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVI-zZ-T27">
-                                                    <rect key="frame" x="175.5" y="0.0" width="175.5" height="30"/>
-                                                    <state key="normal" title="Commenter">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVI-zZ-T27">
+                                                    <rect key="frame" x="175.5" y="0.0" width="175.5" height="24"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="Commenter" image="comment">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                 </button>
@@ -330,7 +332,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fs-O8-N45">
-                                            <rect key="frame" x="0.0" y="171" width="375" height="8"/>
+                                            <rect key="frame" x="0.0" y="165" width="375" height="8"/>
                                             <color key="backgroundColor" red="0.82745098039215681" green="0.83921568627450982" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="8" id="lVw-nJ-KBW"/>
@@ -679,10 +681,12 @@
     </scenes>
     <resources>
         <image name="bio" width="24" height="24"/>
+        <image name="comment" width="24" height="24"/>
         <image name="cycle" width="24" height="24"/>
         <image name="disconnect" width="48" height="48"/>
         <image name="home" width="24" height="24"/>
         <image name="identity" width="24" height="24"/>
+        <image name="like" width="24" height="24"/>
         <image name="parameters" width="24" height="24"/>
         <image name="password" width="24" height="24"/>
     </resources>
