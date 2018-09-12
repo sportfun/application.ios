@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3802A7C821497FD40058CC41 /* createNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3802A7C721497FD40058CC41 /* createNews.swift */; };
+		3802A7CA214996A50058CC41 /* NewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3802A7C9214996A50058CC41 /* NewPost.swift */; };
 		380485F1205D6FEE0029A52A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380485F0205D6FEE0029A52A /* Login.swift */; };
 		38233D2F2062B19500B07724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38233D2E2062B19500B07724 /* Main.storyboard */; };
 		3844158B20A5D0D8008A1E53 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3844158A20A5D0D8008A1E53 /* Identity.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3802A7C721497FD40058CC41 /* createNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createNews.swift; sourceTree = "<group>"; };
+		3802A7C9214996A50058CC41 /* NewPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPost.swift; sourceTree = "<group>"; };
 		380485F0205D6FEE0029A52A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		38233D2E2062B19500B07724 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3844158A20A5D0D8008A1E53 /* Identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 				38B847F8205EA24800B02CFF /* UserInfo.swift */,
 				38C69EA920AF1DDC00340D74 /* Password.swift */,
 				386273B720B3120900AF59F9 /* Post.swift */,
+				3802A7C9214996A50058CC41 /* NewPost.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				38C299D220AF2835005AE9F1 /* Account.swift */,
 				386273B520B30F4D00AF59F9 /* PostCell.swift */,
 				386273B920B436C000AF59F9 /* NewsFeed.swift */,
+				3802A7C721497FD40058CC41 /* createNews.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -343,9 +349,11 @@
 				38B847FB205EACB900B02CFF /* Date.swift in Sources */,
 				386273B620B30F4D00AF59F9 /* PostCell.swift in Sources */,
 				38C14D462052D24900F1A7D4 /* Connexion.swift in Sources */,
+				3802A7CA214996A50058CC41 /* NewPost.swift in Sources */,
 				386273B820B3120900AF59F9 /* Post.swift in Sources */,
 				386273BA20B436C000AF59F9 /* NewsFeed.swift in Sources */,
 				38C14D482052DE5E00F1A7D4 /* Inscription.swift in Sources */,
+				3802A7C821497FD40058CC41 /* createNews.swift in Sources */,
 				38C14D152052CA7300F1A7D4 /* AppDelegate.swift in Sources */,
 				3844158B20A5D0D8008A1E53 /* Identity.swift in Sources */,
 				38B847F9205EA24800B02CFF /* UserInfo.swift in Sources */,

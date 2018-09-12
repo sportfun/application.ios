@@ -31,10 +31,28 @@ class NewsFeed : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let addButton = UIButton(frame: CGRect(origin: CGPoint(x: self.view.frame.width / 2 + self.view.frame.width / 3 , y: self.view.frame.size.height - 110), size: CGSize(width: 50, height: 50)))
+        
+        addButton.layer.cornerRadius = 0.5 * addButton.bounds.size.width
+        addButton.clipsToBounds = true
+        addButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        addButton.setTitle("+", for: UIControlState.normal)
+        addButton.backgroundColor = UIColor.orange
+        self.navigationController?.view.addSubview(addButton)
+        addButton.addTarget(self, action: #selector(NewsFeed.addNews(_:)), for: .touchUpInside)
+        
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 178
         tableView.rowHeight = 178
         
+        self.getPostsUpdate()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.getPostsUpdate()
+    }
+    
+    func getPostsUpdate() {
         var url : String = "/post"
         self.networking.querryWithGet(urlString: url) { data in
             if let data = data {
@@ -70,6 +88,10 @@ class NewsFeed : UITableViewController {
                 }
             }
         }
+    }
+    
+    @objc func addNews(_ sender : UIButton!) {
+        self.navigationController!.pushViewController(self.storyboard!.instantiateViewController(withIdentifier: "addNews") as UIViewController, animated: true)
     }
 }
 
