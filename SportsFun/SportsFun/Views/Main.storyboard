@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -107,6 +107,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="kQf-0j-Mnk">
                                                     <rect key="frame" x="10" y="20" width="70" height="59.5"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="5nP-jT-9gO"/>
                                                     </constraints>
@@ -151,6 +152,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bio" translatesAutoresizingMaskIntoConstraints="NO" id="sS0-C0-TJh">
                                                     <rect key="frame" x="10" y="20" width="70" height="59.5"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="KGV-1q-AWv"/>
                                                     </constraints>
@@ -268,6 +270,71 @@
             </objects>
             <point key="canvasLocation" x="-1007" y="457"/>
         </scene>
+        <!--Create News-->
+        <scene sceneID="Rji-uO-DFc">
+            <objects>
+                <viewController storyboardIdentifier="addNews" id="tir-P3-jGU" customClass="createNews" customModule="SportsFun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AdC-Uk-pJM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Créer une nouvelle activitée" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hw0-mD-gdI">
+                                <rect key="frame" x="38" y="40" width="299.5" height="27.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pW8-Zc-Wrs">
+                                <rect key="frame" x="10" y="87.5" width="355" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="EkS-dD-LXc"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czH-Ry-3W9">
+                                <rect key="frame" x="10" y="387.5" width="355" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VO-uS-3KC">
+                                <rect key="frame" x="153" y="347.5" width="69" height="30"/>
+                                <state key="normal" title="Confirmer"/>
+                                <connections>
+                                    <action selector="clicConfirmerWithSender:" destination="tir-P3-jGU" eventType="touchUpInside" id="2Je-b4-4kv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" identifier="addNews"/>
+                        <constraints>
+                            <constraint firstItem="pW8-Zc-Wrs" firstAttribute="top" secondItem="Hw0-mD-gdI" secondAttribute="bottom" constant="20" id="8zH-1B-cEc"/>
+                            <constraint firstItem="czH-Ry-3W9" firstAttribute="leading" secondItem="Lr6-hA-qLT" secondAttribute="leading" constant="10" id="Hys-qV-n7g"/>
+                            <constraint firstItem="6VO-uS-3KC" firstAttribute="top" secondItem="pW8-Zc-Wrs" secondAttribute="bottom" constant="10" id="P2s-bV-0px"/>
+                            <constraint firstItem="Lr6-hA-qLT" firstAttribute="trailing" secondItem="czH-Ry-3W9" secondAttribute="trailing" constant="10" id="W7h-9v-fv6"/>
+                            <constraint firstItem="6VO-uS-3KC" firstAttribute="centerX" secondItem="AdC-Uk-pJM" secondAttribute="centerX" id="c5A-6j-knh"/>
+                            <constraint firstItem="Hw0-mD-gdI" firstAttribute="top" secondItem="Lr6-hA-qLT" secondAttribute="top" constant="20" id="dFb-9P-dsO"/>
+                            <constraint firstItem="pW8-Zc-Wrs" firstAttribute="leading" secondItem="Lr6-hA-qLT" secondAttribute="leading" constant="10" id="hXh-aU-THC"/>
+                            <constraint firstItem="czH-Ry-3W9" firstAttribute="top" secondItem="6VO-uS-3KC" secondAttribute="bottom" constant="10" id="hx3-07-Wut"/>
+                            <constraint firstItem="czH-Ry-3W9" firstAttribute="centerX" secondItem="AdC-Uk-pJM" secondAttribute="centerX" id="lX5-Bn-u6z"/>
+                            <constraint firstItem="6VO-uS-3KC" firstAttribute="centerX" secondItem="AdC-Uk-pJM" secondAttribute="centerX" id="tmS-j9-d0x"/>
+                            <constraint firstItem="Lr6-hA-qLT" firstAttribute="trailing" secondItem="pW8-Zc-Wrs" secondAttribute="trailing" constant="10" id="wTJ-2X-gL8"/>
+                            <constraint firstItem="Hw0-mD-gdI" firstAttribute="centerX" secondItem="AdC-Uk-pJM" secondAttribute="centerX" id="zPy-2J-V80"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lr6-hA-qLT"/>
+                    </view>
+                    <connections>
+                        <outlet property="bConfirmer" destination="6VO-uS-3KC" id="I6H-X1-yTq"/>
+                        <outlet property="lError" destination="czH-Ry-3W9" id="f4j-Ne-yJD"/>
+                        <outlet property="tfContent" destination="pW8-Zc-Wrs" id="c5u-Ke-6kK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oe3-O5-T1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2458" y="1941"/>
+        </scene>
         <!--Fil d'actualité-->
         <scene sceneID="bfA-Sj-jWk">
             <objects>
@@ -292,7 +359,7 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeZ-D8-9Q9">
                                             <rect key="frame" x="12" y="51" width="351" height="20.5"/>
-                                            <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum molestie lorem pretium tristique condimentum. Ut ac erat dolor. Duis at auctor ligula, in commodo lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus bibendum ante mauris, sit amet consectetur tortor hendrerit non. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum in felis accumsan, blandit dui vitae, rhoncus neque. Ut placerat cursus lectus, quis semper eros rutrum id. Aliquam eget interdum enim, eget pellentesque diam. Nulla elementum, libero sed rutrum maximus, sapien nisi facilisis ipsum, quis egestas urna tortor at tortor. Sed at tellus facilisis, maximus turpis ac, auctor magna. Proin dolor tellus, gravida ac placerat sit amet, maximus a diam. Pellentesque sem mauris, tempor ac cursus at, posuere ac purus. Suspendisse volutpat cursus elit sed pharetra. Nullam vel elementum orci.</mutableString>
+                                            <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum molestie lorem pretium tristique condimentum. Ut ac erat dolor. Duis at auctor ligula, in commodo lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus bibendum ante mauris, sit amet consectetur tortor hendrerit non. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum in felis accumsan, blandit dui vitae, rhoncus neque. Ut placerat cursus lectus, quis semper eros rutrum id. Aliquam eget interdum enim, eget pellentesque diam. Nulla elementum, libero sed rutrum maximus, sapien nisi facilisis ipsum, quis egestas urna tortor at tortor. Sed at tellus facilisis, maximus turpis ac, auctor magna. Proin dolor tellus, gravida ac placerat sit amet, maximus a diam. Pellentesque sem mauris, tempor ac cursus at, posuere ac purus. Suspendisse volutpat cursus elit sed pharetra. Nullam vel elementum orci.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -384,7 +451,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HhE-qp-UP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2676" y="1226.5367316341831"/>
+            <point key="canvasLocation" x="-2458" y="1227"/>
         </scene>
         <!--Actualités-->
         <scene sceneID="68u-yf-vXV">
@@ -401,7 +468,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQP-Nm-b8D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2676" y="457"/>
+            <point key="canvasLocation" x="-2457" y="457"/>
         </scene>
         <!--Identity-->
         <scene sceneID="mcu-i3-xii">

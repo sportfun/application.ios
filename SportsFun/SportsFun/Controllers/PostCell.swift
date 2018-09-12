@@ -40,8 +40,7 @@ class PostCell : UITableViewCell {
         
         for like in self.post.likes! {
             if like == self.myID {
-                print("prout")
-                bLike.setTitleColor(UIColor.blue, for: .normal)
+                bLike.setTitleColor(UIColor.orange, for: .normal)
             }
         }
     }

@@ -74,8 +74,6 @@ class BioGoal : UIViewController {
                         let parsedPassword = try decoder.decode(Passwd.self, from: data)
                         if parsedPassword.success == false {
                             self.lError.text = parsedPassword.message
-                        } else {
-                            self.lError.text = "Success !"
                         }
                     } catch let error as NSError {
                         print(error.localizedDescription)
