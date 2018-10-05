@@ -37,6 +37,7 @@ class Password : UIViewController {
         super.viewDidLoad()
         
         lError.text = ""
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func clicConfirmer(sender: UIButton) {

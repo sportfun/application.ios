@@ -52,8 +52,9 @@ class Networking {
                 print("no connection detected: ", error!)
                 return
             }
-            //            let responseString = String(data: data, encoding: .utf8)
-            //            print("responseString = \(String(describing: responseString))")
+            print(urlString)
+                        let responseString = String(data: data, encoding: .utf8)
+                        print("responseString = \(String(describing: responseString))")
             DispatchQueue.main.async {
                 completion(data)
             }
