@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class BioGoal : UIViewController {
-    @IBOutlet var tfBio : UITextField!
+    @IBOutlet var tvBio : UITextView!
     @IBOutlet var tfGoal : UITextField!
     @IBOutlet var lError : UILabel!
     
@@ -35,8 +35,11 @@ class BioGoal : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tfBio.textAlignment = .left
-        tfBio.contentVerticalAlignment = .top
+        self.hideKeyboardWhenTappedAround()
+        tvBio.layer.cornerRadius = 5
+        tvBio.layer.borderColor = UIColor.gray.withAlphaComponent(0.5).cgColor
+        tvBio.layer.borderWidth = 0.5
+        tvBio.clipsToBounds = true
         let url : String = "/user"
         self.networking.querryWithGet(urlString: url) { data in
             if let data = data {
@@ -52,7 +55,7 @@ class BioGoal : UIViewController {
                             self.userInfo.bio.removeLast()
                         }
                         self.tfGoal.text = String(self.userInfo.goal)
-                        self.tfBio.text = self.userInfo.bio
+                        self.tvBio.text = self.userInfo.bio
                     }
                 } catch {
                     print("error:", error)
@@ -64,7 +67,7 @@ class BioGoal : UIViewController {
     }
     
     @IBAction func clicConfirmer(sender : UIButton) {
-        if let goal = Int(tfGoal.text!), let bio = tfBio.text, bio != "" {
+        if let goal = Int(tfGoal.text!), let bio = tvBio.text, bio != "" {
             let url : String =  "/user"
             let param : String = "username=\(self.userInfo.username)&email=\(self.userInfo.email)&firstName=\(self.userInfo.firstName)&lastName=\(self.userInfo.lastName)&birthDate=\(self.userInfo.birthDate)&bio=\(bio)&coverPic=\"\"&profilePic=\"\"&roles=[]&goal=\(goal)"
             self.networking.querryWithPut(urlString : url, param: param) { data in

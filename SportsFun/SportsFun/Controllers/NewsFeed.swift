@@ -36,7 +36,7 @@ class NewsFeed : UITableViewController {
         addButton.layer.cornerRadius = 0.5 * addButton.bounds.size.width
         addButton.clipsToBounds = true
         addButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        addButton.setTitle("+", for: UIControlState.normal)
+        addButton.setTitle("+", for: UIControl.State.normal)
         addButton.backgroundColor = UIColor.orange
         self.navigationController?.view.addSubview(addButton)
         addButton.addTarget(self, action: #selector(NewsFeed.addNews(_:)), for: .touchUpInside)
@@ -72,6 +72,7 @@ class NewsFeed : UITableViewController {
                                     if parsedUser.success == false {
                                         print(parsedUser.message)
                                     } else {
+                                        
                                         if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
                                             let fileURL = documentDirectory.appendingPathComponent("id.txt")
                                             try parsedUser.data?._id.write(to: fileURL, atomically: false, encoding: .utf8)

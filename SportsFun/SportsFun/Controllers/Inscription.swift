@@ -30,6 +30,7 @@ class Inscription : UIViewController {
         super.viewDidLoad()
         
         lError.text = ""
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func clicConfirm(sender: UIButton) {

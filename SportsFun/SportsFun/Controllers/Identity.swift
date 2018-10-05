@@ -36,6 +36,7 @@ class Identity : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround()
         let url : String = "/user"
         self.networking.querryWithGet(urlString: url) { data in
             if let data = data {
@@ -85,5 +86,17 @@ class Identity : UIViewController {
         } else {
             lError.text = "tous les champs doivent être remplis"
         }
+    }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

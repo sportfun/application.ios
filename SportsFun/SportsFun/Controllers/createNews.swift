@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class createNews : UIViewController {
-    @IBOutlet var tfContent : UITextField!
+    @IBOutlet var tvContent : UITextView!
     @IBOutlet var bConfirmer : UIButton!
     @IBOutlet var lError : UILabel!
     let networking : Networking
@@ -33,13 +33,16 @@ class createNews : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tfContent.textAlignment = .left
-        tfContent.contentVerticalAlignment = .top
+        self.hideKeyboardWhenTappedAround()
         lError.text = ""
+        tvContent.layer.cornerRadius = 5
+        tvContent.layer.borderColor = UIColor.gray.withAlphaComponent(0.5).cgColor
+        tvContent.layer.borderWidth = 0.5
+        tvContent.clipsToBounds = true
     }
     
     @IBAction func clicConfirmer(sender : UIButton) {
-        if let content = tfContent.text, content != "" {
+        if let content = tvContent.text, content != "" {
             let url : String =  "/post"
             let param : String = "content=\(content)"
             self.networking.querryWithPostWithToken(urlString : url, param: param) { data in
