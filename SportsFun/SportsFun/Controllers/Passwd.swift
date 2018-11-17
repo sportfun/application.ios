@@ -16,10 +16,12 @@ class Password : UIViewController {
     @IBOutlet var lError : UILabel!
     
     let networking : Networking
+    let check : Check
     var userInfo : userInfoData!
  
     required init?(coder decoder: NSCoder) {
         self.networking = Networking(token: "")
+        self.check = Check()
         do {
             if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
                 let fileURL = documentDirectory.appendingPathComponent("token.txt")
@@ -41,7 +43,7 @@ class Password : UIViewController {
     }
     
     @IBAction func clicConfirmer(sender: UIButton) {
-        if let pPassword = tPPassword.text, let nPassword = tNPassword.text, let RPassword = tRPassword.text, pPassword != "" && nPassword != "" && RPassword != "" {
+        if let pPassword = tPPassword.text, let nPassword = tNPassword.text, let RPassword = tRPassword.text, pPassword != "" && nPassword != "" && RPassword != "" && self.check.chekPassword(password: nPassword) {
             if nPassword == RPassword {
                 let url : String =  "/user/password"
                 let param : String = "password=\(pPassword)&newPassword=\(nPassword)"
@@ -61,6 +63,8 @@ class Password : UIViewController {
             } else {
                 lError.text = "les nouveaux mots de passe ne sont pas identiques"
             }
+        } else {
+            lError.text = "Une longueur minimale de 8 caractères est attendu pour votre mot de passe"
         }
     }
     

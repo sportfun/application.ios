@@ -8,6 +8,10 @@
 
 import Foundation
 
+// if request is not working past these 2 lines before dispatchQueue.main.async
+//                        let responseString = String(data: data, encoding: .utf8)
+//                        print("responseString = \(String(describing: responseString))")
+
 class Networking {
     typealias QuerryResult = (Data?) -> ()
     var token : String
@@ -31,8 +35,6 @@ class Networking {
                 print("no connection detected: ", error!)
                 return
             }
-//                        let responseString = String(data: data, encoding: .utf8)
-//                        print("responseString = \(String(describing: responseString))")
             DispatchQueue.main.async {
                 completion(data)
             }
@@ -53,8 +55,6 @@ class Networking {
                 return
             }
             print(urlString)
-                        let responseString = String(data: data, encoding: .utf8)
-                        print("responseString = \(String(describing: responseString))")
             DispatchQueue.main.async {
                 completion(data)
             }
@@ -75,8 +75,6 @@ class Networking {
                 print("no connection detected: ", error!)
                 return
             }
-            //            let responseString = String(data: data, encoding: .utf8)
-            //            print("responseString = \(String(describing: responseString))")
             DispatchQueue.main.async {
                 completion(data)
             }
@@ -87,7 +85,6 @@ class Networking {
     func querryWithGet(urlString : String, completion: @escaping QuerryResult) {
         let url = URL(string: "\(self.IPAdress)\(urlString)")!
         var request = URLRequest(url: url)
-        print(url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.addValue("\(self.token)", forHTTPHeaderField: "token")
         request.httpMethod = "GET"
@@ -96,8 +93,6 @@ class Networking {
                 print("no connection detected: ", error!)
                 return
             }
-//            let responseString = String(data: data, encoding: .utf8)
-//            print("responseString = \(String(describing: responseString))")
             DispatchQueue.main.async {
                 completion(data)
             }

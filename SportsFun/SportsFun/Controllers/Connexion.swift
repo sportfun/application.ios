@@ -16,8 +16,10 @@ class Connexion : UIViewController {
     @IBOutlet var bConnection : UIButton!
     @IBOutlet var lError : UILabel!
     let networking : Networking
+    let check: Check
     
     required init?(coder decoder: NSCoder) {
+        self.check = Check()
         self.networking = Networking(token: "")
         do {
             if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
@@ -46,6 +48,7 @@ class Connexion : UIViewController {
                         if parsedUser.success == false {
                             return
                         } else {
+                            self.getMyID()
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
                             let vc = storyboard.instantiateViewController(withIdentifier: "Main")
                             self.present(vc, animated: true, completion: nil)
@@ -60,6 +63,24 @@ class Connexion : UIViewController {
         lError.text = ""
     }
     
+    func getMyID() {
+        let url = "/user"
+        self.networking.querryWithGet(urlString: url) { data in
+            if let data = data {
+                do {
+                    let parsedUser = try JSONDecoder().decode(UserInfo.self, from: data)
+                    if parsedUser.success == false {
+                        print(parsedUser.message)
+                    } else {
+                        myID = (parsedUser.data?._id)!
+                    }
+                } catch {
+                    print("error:", error)
+                }
+            }
+        }
+    }
+    
     @IBAction func clicConnexion(sender : UIButton) {
         lError.text = ""
         if let userName = tfUserName.text, let password = tfPassword.text, userName != "" && password != "" {
@@ -71,7 +92,7 @@ class Connexion : UIViewController {
                         let decoder = JSONDecoder()
                         let parsedLogin = try decoder.decode(Login.self, from: data)
                         if parsedLogin.success == false {
-                            self.lError.text = parsedLogin.message
+                            self.lError.text = "la combinaison mot de passe et/ou identifiant est incorrecte"
                         } else {
                             if let token = parsedLogin.data?.token {
                                 url = "/user"
@@ -85,9 +106,7 @@ class Connexion : UIViewController {
                                             } else {
                                                 if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
                                                     let fileURL = documentDirectory.appendingPathComponent("token.txt")
-//                                                    let fileURL2 = documentDirectory.appendingPathComponent("id.txt")
                                                     try token.write(to: fileURL, atomically: false, encoding: .utf8)
-//                                                    try parsedUser.data?._id.write(to: fileURL2, atomically: false, encoding: .utf8)
                                                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                                                     let vc = storyboard.instantiateViewController(withIdentifier: "Main")
                                                     self.present(vc, animated: true, completion: nil)
@@ -107,7 +126,7 @@ class Connexion : UIViewController {
                 }
             }
         } else {
-            lError.text = "Veuillez rentrer vos identifiants"
+            lError.text = "Veuillez saisir vos identifiants"
         }
     }
     
