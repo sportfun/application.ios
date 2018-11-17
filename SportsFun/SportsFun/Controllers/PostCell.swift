@@ -2,58 +2,46 @@
 //  PostCell.swift
 //  SportsFun
 //
-//  Created by benjamin malbrel on 21/05/2018.
+//  Created by benjamin malbrel on 17/11/2018.
 //  Copyright © 2018 benjamin malbrel. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class PostCell : UITableViewCell {
-    @IBOutlet var lName : UILabel!
-    @IBOutlet var lText : UILabel!
-    @IBOutlet var lLikesNumber : UILabel!
-    @IBOutlet var lCommentsNumber : UILabel!
-    @IBOutlet var bLike : UIButton!
+protocol PostCellDelegate {
+    func didTapLike(post: Post)
+    func didTapComment(post: Post)
+}
+
+class PostCell: UITableViewCell {
+    var post: Post?
+    @IBOutlet weak var lName: UILabel!
+    @IBOutlet weak var lContent: UILabel!
+    @IBOutlet weak var bLike: UIButton!
+    @IBOutlet weak var bComment: UIButton!
+    var delegate : PostCellDelegate?
     
-    var myID : String!
-    var post : Post! {
-        didSet {
-            self.getID()
-            self.updateUI()
-        }
-    }
-    
-    func updateUI() {
-        self.lName.text = "\(self.post.author.firstName) \(self.post.author.lastName)"
-        self.lText.text = self.post.content
-        if self.post.comments!.count > 1 {
-            self.lCommentsNumber.text = "\(self.post.comments!.count) commentaires"
-        } else {
-            self.lCommentsNumber.text = "\(self.post.comments!.count) commentaire"
-        }
-        if self.post.likes!.count > 1 {
-            self.lLikesNumber.text = "\(self.post.likes!.count) aiment ça"
-        } else {
-            self.lLikesNumber.text = "\(self.post.likes!.count) aime ça"
-        }
-        
-        for like in self.post.likes! {
-            if like == self.myID {
+    func setPost(post: Post) {
+        self.post = post
+        lName.text = post.author.firstName + " " + post.author.lastName
+        lContent.text = post.content
+        for like in (self.post?.likes)! {
+            if like == myID {
                 bLike.setTitleColor(UIColor.orange, for: .normal)
             }
         }
     }
     
-    func getID() {
-        do {
-            if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-                let fileURL = documentDirectory.appendingPathComponent("id.txt")
-                let ID = try String(contentsOf: fileURL)
-                self.myID = ID
-            }
-        } catch {
-            print("error:", error)
+    @IBAction func like(_ sender: UIButton) {
+        delegate?.didTapLike(post: self.post!)
+        if sender.titleColor(for: .normal) == UIColor.orange {
+            bLike.setTitleColor(UIColor.black, for: .normal)
+        } else {
+            bLike.setTitleColor(UIColor.orange, for: .normal)
         }
+    }
+    
+    @IBAction func comment(_ sender: UIButton) {
+        delegate?.didTapComment(post: self.post!)
     }
 }

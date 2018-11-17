@@ -9,9 +9,12 @@
 import Foundation
 import UIKit
 
-class NewsFeed : UITableViewController {
-    var posts : [Post]?
-    var networking : Networking
+var myID : String = ""
+
+class NewsFeed : UIViewController {
+    var posts: [Post] = []
+    var networking: Networking
+    @IBOutlet weak var tableView: UITableView!
     
     required init?(coder decoder: NSCoder) {
         self.networking = Networking(token: "")
@@ -40,49 +43,43 @@ class NewsFeed : UITableViewController {
         addButton.backgroundColor = UIColor.orange
         self.navigationController?.view.addSubview(addButton)
         addButton.addTarget(self, action: #selector(NewsFeed.addNews(_:)), for: .touchUpInside)
-        
-        tableView.separatorStyle = .none
-        tableView.estimatedRowHeight = 178
-        tableView.rowHeight = 178
-        
-        self.getPostsUpdate()
+        self.getPosts()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        self.getPostsUpdate()
+    @objc func addNews(_ sender : UIButton!) {
+        self.navigationController!.pushViewController(self.storyboard!.instantiateViewController(withIdentifier: "addNews") as UIViewController, animated: true)
     }
     
-    func getPostsUpdate() {
-        var url : String = "/post"
+    func getPosts() {
+        let url : String = "/post"
         self.networking.querryWithGet(urlString: url) { data in
             if let data = data {
                 do {
-                    let decoder = JSONDecoder()
-                    let postData = try decoder.decode(PostData.self, from: data)
+                    let postData = try JSONDecoder().decode(PostsData.self, from: data)
                     if postData.success == false {
                         print(postData.message)
                     } else {
                         self.posts = postData.data!
                         self.tableView.reloadData()
-                        url = "/user"
-                        self.networking.querryWithGet(urlString: url) { data in
-                            if let data = data {
-                                do {
-                                    let parsedUser = try decoder.decode(UserInfo.self, from: data)
-                                    if parsedUser.success == false {
-                                        print(parsedUser.message)
-                                    } else {
-                                        
-                                        if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-                                            let fileURL = documentDirectory.appendingPathComponent("id.txt")
-                                            try parsedUser.data?._id.write(to: fileURL, atomically: false, encoding: .utf8)
-                                        }
-                                    }
-                                } catch {
-                                    print("error:", error)
-                                }
-                            }
-                        }
+                    }
+                } catch {
+                    print("error:", error)
+                }
+            }
+        }
+    }
+}
+
+extension NewsFeed: PostCellDelegate {    
+    func didTapLike(post: Post){
+        let url : String = "/post/like/\(post._id)"
+        self.networking.querryWithPut(urlString: url, param: "") { data in
+            if let data = data {
+                do {
+                    let likeData = try JSONDecoder().decode(Passwd.self, from: data)
+                    if likeData.success == false {
+                        print(likeData.message)
+                    } else {
                     }
                 } catch {
                     print("error:", error)
@@ -91,24 +88,22 @@ class NewsFeed : UITableViewController {
         }
     }
     
-    @objc func addNews(_ sender : UIButton!) {
-        self.navigationController!.pushViewController(self.storyboard!.instantiateViewController(withIdentifier: "addNews") as UIViewController, animated: true)
+    func didTapComment(post: Post) {
+        self.navigationController!.pushViewController(self.storyboard!.instantiateViewController(withIdentifier: "editNews") as UIViewController, animated: true)
     }
 }
 
-extension NewsFeed {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let posts = posts {
-            return posts.count
-        } else {
-            return 0
-        }
+extension NewsFeed: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let post = self.posts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
         
-        cell.post = self.posts?[indexPath.row]
+        cell.setPost(post: post)
+        cell.delegate = self
         
         return cell
     }
