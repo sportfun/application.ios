@@ -28,6 +28,7 @@ class PostCell: UITableViewCell {
         for like in (self.post?.likes)! {
             if like == myID {
                 bLike.setTitleColor(UIColor.orange, for: .normal)
+                bLike.tintColor = UIColor.orange;
             }
         }
     }
@@ -36,8 +37,10 @@ class PostCell: UITableViewCell {
         delegate?.didTapLike(post: self.post!)
         if sender.titleColor(for: .normal) == UIColor.orange {
             bLike.setTitleColor(UIColor.black, for: .normal)
+            bLike.tintColor = UIColor.black;
         } else {
             bLike.setTitleColor(UIColor.orange, for: .normal)
+            bLike.tintColor = UIColor.orange;
         }
     }
     
