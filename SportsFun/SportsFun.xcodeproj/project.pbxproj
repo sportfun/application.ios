@@ -49,6 +49,7 @@
 		8C0D61EB21A8FB4700E9DA0A /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61DC21A8FB4700E9DA0A /* UserTableViewCell.swift */; };
 		8C0D61EC21A8FB4700E9DA0A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61DD21A8FB4700E9DA0A /* Message.swift */; };
 		8C0D61ED21A8FB4700E9DA0A /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61DE21A8FB4700E9DA0A /* NewConversationViewController.swift */; };
+		8CB5C38F21A9C53E00F36D79 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB5C38E21A9C53E00F36D79 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		8C0D61DC21A8FB4700E9DA0A /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTableViewCell.swift; path = SportsFun/Controllers/UserTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		8C0D61DD21A8FB4700E9DA0A /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = SportsFun/Controllers/Message.swift; sourceTree = SOURCE_ROOT; };
 		8C0D61DE21A8FB4700E9DA0A /* NewConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewConversationViewController.swift; path = SportsFun/Controllers/NewConversationViewController.swift; sourceTree = SOURCE_ROOT; };
+		8CB5C38E21A9C53E00F36D79 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 				8C0D61CD21A8FAD400E9DA0A /* NavigationBar.storyboard */,
 				8C0D61D521A8FB4600E9DA0A /* AccountCategory.swift */,
 				8C0D61D821A8FB4700E9DA0A /* AccountCategoryCellTableViewCell.swift */,
+				8CB5C38E21A9C53E00F36D79 /* Category.swift */,
 				8C0D61DB21A8FB4700E9DA0A /* AccountDetails.swift */,
 				8C0D61D321A8FB4600E9DA0A /* Conversation.swift */,
 				8C0D61D621A8FB4700E9DA0A /* ConversationTableViewCell.swift */,
@@ -424,6 +427,7 @@
 				386273BA20B436C000AF59F9 /* NewsFeed.swift in Sources */,
 				8C0D61E721A8FB4700E9DA0A /* AccountCategoryCellTableViewCell.swift in Sources */,
 				8C0D61E921A8FB4700E9DA0A /* ConversationViewController.swift in Sources */,
+				8CB5C38F21A9C53E00F36D79 /* Category.swift in Sources */,
 				38C14D482052DE5E00F1A7D4 /* Inscription.swift in Sources */,
 				3802A7C821497FD40058CC41 /* createNews.swift in Sources */,
 				8C0D61E621A8FB4700E9DA0A /* UserTableViewController.swift in Sources */,
