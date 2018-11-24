@@ -6,7 +6,6 @@
 //  Copyright © 2018 benjamin malbrel. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class AccountCategory : UIViewController, UITableViewDelegate, UITableViewDataSource {
