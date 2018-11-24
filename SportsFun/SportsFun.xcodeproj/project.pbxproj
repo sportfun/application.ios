@@ -33,6 +33,22 @@
 		38C299D320AF2835005AE9F1 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C299D220AF2835005AE9F1 /* Account.swift */; };
 		38C69EA620A9ACE100340D74 /* BioGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C69EA520A9ACE100340D74 /* BioGoal.swift */; };
 		38C69EAA20AF1DDC00340D74 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C69EA920AF1DDC00340D74 /* Password.swift */; };
+		8C0D61CF21A8FAD400E9DA0A /* NavigationBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0D61CD21A8FAD400E9DA0A /* NavigationBar.storyboard */; };
+		8C0D61DF21A8FB4700E9DA0A /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D021A8FB4600E9DA0A /* UserSearchViewController.swift */; };
+		8C0D61E021A8FB4700E9DA0A /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D121A8FB4600E9DA0A /* ScannerViewController.swift */; };
+		8C0D61E121A8FB4700E9DA0A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D221A8FB4600E9DA0A /* User.swift */; };
+		8C0D61E221A8FB4700E9DA0A /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D321A8FB4600E9DA0A /* Conversation.swift */; };
+		8C0D61E321A8FB4700E9DA0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D421A8FB4600E9DA0A /* ViewController.swift */; };
+		8C0D61E421A8FB4700E9DA0A /* AccountCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D521A8FB4600E9DA0A /* AccountCategory.swift */; };
+		8C0D61E521A8FB4700E9DA0A /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D621A8FB4700E9DA0A /* ConversationTableViewCell.swift */; };
+		8C0D61E621A8FB4700E9DA0A /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D721A8FB4700E9DA0A /* UserTableViewController.swift */; };
+		8C0D61E721A8FB4700E9DA0A /* AccountCategoryCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D821A8FB4700E9DA0A /* AccountCategoryCellTableViewCell.swift */; };
+		8C0D61E821A8FB4700E9DA0A /* ConversationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D921A8FB4700E9DA0A /* ConversationTableViewController.swift */; };
+		8C0D61E921A8FB4700E9DA0A /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61DA21A8FB4700E9DA0A /* ConversationViewController.swift */; };
+		8C0D61EA21A8FB4700E9DA0A /* AccountDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61DB21A8FB4700E9DA0A /* AccountDetails.swift */; };
+		8C0D61EB21A8FB4700E9DA0A /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61DC21A8FB4700E9DA0A /* UserTableViewCell.swift */; };
+		8C0D61EC21A8FB4700E9DA0A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61DD21A8FB4700E9DA0A /* Message.swift */; };
+		8C0D61ED21A8FB4700E9DA0A /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61DE21A8FB4700E9DA0A /* NewConversationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +101,22 @@
 		38C299D220AF2835005AE9F1 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		38C69EA520A9ACE100340D74 /* BioGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioGoal.swift; sourceTree = "<group>"; };
 		38C69EA920AF1DDC00340D74 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
+		8C0D61CE21A8FAD400E9DA0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NavigationBar.storyboard; sourceTree = "<group>"; };
+		8C0D61D021A8FB4600E9DA0A /* UserSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSearchViewController.swift; path = SportsFun/Controllers/UserSearchViewController.swift; sourceTree = SOURCE_ROOT; };
+		8C0D61D121A8FB4600E9DA0A /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScannerViewController.swift; path = SportsFun/Controllers/ScannerViewController.swift; sourceTree = SOURCE_ROOT; };
+		8C0D61D221A8FB4600E9DA0A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = SportsFun/Controllers/User.swift; sourceTree = SOURCE_ROOT; };
+		8C0D61D321A8FB4600E9DA0A /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Conversation.swift; path = SportsFun/Controllers/Conversation.swift; sourceTree = SOURCE_ROOT; };
+		8C0D61D421A8FB4600E9DA0A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SportsFun/Controllers/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		8C0D61D521A8FB4600E9DA0A /* AccountCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountCategory.swift; path = SportsFun/Controllers/AccountCategory.swift; sourceTree = SOURCE_ROOT; };
+		8C0D61D621A8FB4700E9DA0A /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationTableViewCell.swift; path = SportsFun/Controllers/ConversationTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		8C0D61D721A8FB4700E9DA0A /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTableViewController.swift; path = SportsFun/Controllers/UserTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		8C0D61D821A8FB4700E9DA0A /* AccountCategoryCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountCategoryCellTableViewCell.swift; path = SportsFun/Controllers/AccountCategoryCellTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		8C0D61D921A8FB4700E9DA0A /* ConversationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationTableViewController.swift; path = SportsFun/Controllers/ConversationTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		8C0D61DA21A8FB4700E9DA0A /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationViewController.swift; path = SportsFun/Controllers/ConversationViewController.swift; sourceTree = SOURCE_ROOT; };
+		8C0D61DB21A8FB4700E9DA0A /* AccountDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountDetails.swift; path = SportsFun/Controllers/AccountDetails.swift; sourceTree = SOURCE_ROOT; };
+		8C0D61DC21A8FB4700E9DA0A /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTableViewCell.swift; path = SportsFun/Controllers/UserTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		8C0D61DD21A8FB4700E9DA0A /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = SportsFun/Controllers/Message.swift; sourceTree = SOURCE_ROOT; };
+		8C0D61DE21A8FB4700E9DA0A /* NewConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewConversationViewController.swift; path = SportsFun/Controllers/NewConversationViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +224,22 @@
 			children = (
 				38C14D1D2052CA7300F1A7D4 /* LaunchScreen.storyboard */,
 				38C14D182052CA7300F1A7D4 /* LoginRegister.storyboard */,
+				8C0D61CD21A8FAD400E9DA0A /* NavigationBar.storyboard */,
+				8C0D61D521A8FB4600E9DA0A /* AccountCategory.swift */,
+				8C0D61D821A8FB4700E9DA0A /* AccountCategoryCellTableViewCell.swift */,
+				8C0D61DB21A8FB4700E9DA0A /* AccountDetails.swift */,
+				8C0D61D321A8FB4600E9DA0A /* Conversation.swift */,
+				8C0D61D621A8FB4700E9DA0A /* ConversationTableViewCell.swift */,
+				8C0D61D921A8FB4700E9DA0A /* ConversationTableViewController.swift */,
+				8C0D61DA21A8FB4700E9DA0A /* ConversationViewController.swift */,
+				8C0D61DD21A8FB4700E9DA0A /* Message.swift */,
+				8C0D61DE21A8FB4700E9DA0A /* NewConversationViewController.swift */,
+				8C0D61D121A8FB4600E9DA0A /* ScannerViewController.swift */,
+				8C0D61D221A8FB4600E9DA0A /* User.swift */,
+				8C0D61D021A8FB4600E9DA0A /* UserSearchViewController.swift */,
+				8C0D61DC21A8FB4700E9DA0A /* UserTableViewCell.swift */,
+				8C0D61D721A8FB4700E9DA0A /* UserTableViewController.swift */,
+				8C0D61D421A8FB4600E9DA0A /* ViewController.swift */,
 				38233D2E2062B19500B07724 /* Main.storyboard */,
 			);
 			path = Views;
@@ -327,6 +375,7 @@
 				38C14D1F2052CA7300F1A7D4 /* LaunchScreen.storyboard in Resources */,
 				38C14D1C2052CA7300F1A7D4 /* Assets.xcassets in Resources */,
 				38C14D1A2052CA7300F1A7D4 /* LoginRegister.storyboard in Resources */,
+				8C0D61CF21A8FAD400E9DA0A /* NavigationBar.storyboard in Resources */,
 				38233D2F2062B19500B07724 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,26 +401,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C0D61E321A8FB4700E9DA0A /* ViewController.swift in Sources */,
+				8C0D61E221A8FB4700E9DA0A /* Conversation.swift in Sources */,
+				8C0D61EA21A8FB4700E9DA0A /* AccountDetails.swift in Sources */,
+				8C0D61EC21A8FB4700E9DA0A /* Message.swift in Sources */,
+				8C0D61E821A8FB4700E9DA0A /* ConversationTableViewController.swift in Sources */,
 				381DADD821860D7400B607E9 /* editNews.swift in Sources */,
 				380485F1205D6FEE0029A52A /* Login.swift in Sources */,
 				38C299D320AF2835005AE9F1 /* Account.swift in Sources */,
+				8C0D61ED21A8FB4700E9DA0A /* NewConversationViewController.swift in Sources */,
 				38907BAE205C4149000944C7 /* Networking.swift in Sources */,
 				38C69EAA20AF1DDC00340D74 /* Password.swift in Sources */,
 				386375A020A5DF370050FE91 /* Passwd.swift in Sources */,
 				38C69EA620A9ACE100340D74 /* BioGoal.swift in Sources */,
 				38B847FB205EACB900B02CFF /* Date.swift in Sources */,
 				38C14D462052D24900F1A7D4 /* Connexion.swift in Sources */,
+				8C0D61EB21A8FB4700E9DA0A /* UserTableViewCell.swift in Sources */,
+				8C0D61E421A8FB4700E9DA0A /* AccountCategory.swift in Sources */,
 				3802A7CA214996A50058CC41 /* NewPost.swift in Sources */,
 				386273B820B3120900AF59F9 /* Posts.swift in Sources */,
 				38020956218C83AF00919CEB /* Check.swift in Sources */,
 				386273BA20B436C000AF59F9 /* NewsFeed.swift in Sources */,
+				8C0D61E721A8FB4700E9DA0A /* AccountCategoryCellTableViewCell.swift in Sources */,
+				8C0D61E921A8FB4700E9DA0A /* ConversationViewController.swift in Sources */,
 				38C14D482052DE5E00F1A7D4 /* Inscription.swift in Sources */,
 				3802A7C821497FD40058CC41 /* createNews.swift in Sources */,
+				8C0D61E621A8FB4700E9DA0A /* UserTableViewController.swift in Sources */,
 				38C14D152052CA7300F1A7D4 /* AppDelegate.swift in Sources */,
+				8C0D61DF21A8FB4700E9DA0A /* UserSearchViewController.swift in Sources */,
 				381DADDA21860EA400B607E9 /* Post.swift in Sources */,
 				3844158B20A5D0D8008A1E53 /* Identity.swift in Sources */,
 				38B847F9205EA24800B02CFF /* UserInfo.swift in Sources */,
 				38A7FAC721A05A5200594A43 /* PostCell.swift in Sources */,
+				8C0D61E021A8FB4700E9DA0A /* ScannerViewController.swift in Sources */,
+				8C0D61E121A8FB4700E9DA0A /* User.swift in Sources */,
+				8C0D61E521A8FB4700E9DA0A /* ConversationTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +485,14 @@
 				38C14D1E2052CA7300F1A7D4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8C0D61CD21A8FAD400E9DA0A /* NavigationBar.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C0D61CE21A8FAD400E9DA0A /* Base */,
+			);
+			name = NavigationBar.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

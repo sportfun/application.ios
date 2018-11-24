@@ -380,7 +380,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4g-wb-8Om">
                                                     <rect key="frame" x="12" y="50.5" width="351" height="26.5"/>
-                                                    <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur elementum massa, sit amet dictum nunc commodo volutpat. Morbi euismod finibus gravida. Etiam at dui dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam semper laoreet urna, quis hendrerit libero. Praesent porttitor, purus sit amet feugiat efficitur, magna erat euismod turpis, nec bibendum dolor nisl vitae lacus. Suspendisse sollicitudin molestie ornare. Ut lobortis eget justo a porttitor. Fusce volutpat tincidunt nunc id gravida. Aliquam vitae turpis vitae justo pulvinar congue ac id sapien. Nullam vel ante eget massa maximus tempus. Proin iaculis turpis non lorem blandit, sit amet porttitor metus tempor. Integer sit amet faucibus ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dolor sem, dignissim quis viverra iaculis, sollicitudin vitae lorem.</mutableString>
+                                                    <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur elementum massa, sit amet dictum nunc commodo volutpat. Morbi euismod finibus gravida. Etiam at dui dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam semper laoreet urna, quis hendrerit libero. Praesent porttitor, purus sit amet feugiat efficitur, magna erat euismod turpis, nec bibendum dolor nisl vitae lacus. Suspendisse sollicitudin molestie ornare. Ut lobortis eget justo a porttitor. Fusce volutpat tincidunt nunc id gravida. Aliquam vitae turpis vitae justo pulvinar congue ac id sapien. Nullam vel ante eget massa maximus tempus. Proin iaculis turpis non lorem blandit, sit amet porttitor metus tempor. Integer sit amet faucibus ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dolor sem, dignissim quis viverra iaculis, sollicitudin vitae lorem.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -467,7 +467,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4hd-cu-d8b"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Fil d'actualité" id="rIW-xs-0Oo"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Fil d'actualité" id="rIW-xs-0Oo">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="j5n-GD-eqM">
+                                <connections>
+                                    <segue destination="UPD-bI-vwv" kind="presentation" id="vKc-q0-bfF"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="search" id="tbT-aa-JRc">
+                                <connections>
+                                    <segue destination="JdF-ym-5pg" kind="presentation" id="kYe-N5-kSG"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="ixb-np-8Yo" id="lXv-zF-1Cv"/>
                     </connections>
@@ -767,6 +782,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJQ-6K-A88" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="521" y="1227"/>
+        </scene>
+        <!--ScannerNavigationController-->
+        <scene sceneID="Msl-z1-UgR">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ScannerNavigationController" storyboardName="NavigationBar" referencedIdentifier="ScannerNavigationController" id="UPD-bI-vwv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a2D-Io-dvj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1731" y="939"/>
+        </scene>
+        <!--SearchNavigationController-->
+        <scene sceneID="OP9-ce-tbr">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SearchNavigationController" storyboardName="NavigationBar" referencedIdentifier="SearchNavigationController" id="JdF-ym-5pg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5YJ-wF-mT1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1725" y="1035"/>
         </scene>
     </scenes>
     <resources>
