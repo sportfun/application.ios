@@ -24,6 +24,7 @@ class NewsFeed : UIViewController {
                 let fileURL = documentDirectory.appendingPathComponent("token.txt")
                 let token = try String(contentsOf: fileURL)
                 self.networking.token = token
+                print(token)
             }
         } catch {
             print("error:", error)
