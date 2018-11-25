@@ -3,14 +3,18 @@ import UIKit
 
 class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
+  // MARK: - Properties
+
   var captureSession: AVCaptureSession!
   var previewLayer: AVCaptureVideoPreviewLayer!
 
-  // MARK: Navigation
+  // MARK: - Navigation
 
   @IBAction func cancel(_ sender: UIBarButtonItem) {
     dismiss(animated: true, completion: nil)
   }
+
+  // MARK: - View Cycle
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -18,7 +22,10 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     view.backgroundColor = UIColor.black
     captureSession = AVCaptureSession()
 
-    guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
+    guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {
+      return
+    }
+
     let videoInput: AVCaptureDeviceInput
 
     do {
@@ -30,35 +37,30 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     if (captureSession.canAddInput(videoInput)) {
       captureSession.addInput(videoInput)
     } else {
-      failed()
+      showAlert(title: "Erreur", message: "Votre appareil ne prend pas en charge le scan de QR code. Veuillez utiliser un appareil avec une caméra.")
+      captureSession = nil
       return
     }
 
     let metadataOutput = AVCaptureMetadataOutput()
 
     if (captureSession.canAddOutput(metadataOutput)) {
-      captureSession.addOutput(metadataOutput)
-
       metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
       metadataOutput.metadataObjectTypes = [.qr]
+      captureSession.addOutput(metadataOutput)
     } else {
-      failed()
+      showAlert(title: "Erreur", message: "Votre appareil ne prend pas en charge le scan de QR code. Veuillez utiliser un appareil avec une caméra.")
+      captureSession = nil
       return
     }
 
     previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
     previewLayer.frame = view.layer.bounds
     previewLayer.videoGravity = .resizeAspectFill
+
     view.layer.addSublayer(previewLayer)
 
     captureSession.startRunning()
-  }
-
-  func failed() {
-    let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)
-    ac.addAction(UIAlertAction(title: "OK", style: .default))
-    present(ac, animated: true)
-    captureSession = nil
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -77,46 +79,48 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
   }
 
+  override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+    return .portrait
+  }
+
   func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
     captureSession.stopRunning()
 
     if let metadataObject = metadataObjects.first {
-      guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
-      guard let stringValue = readableObject.stringValue else { return }
+      guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else {
+        return
+      }
+
+      guard let stringValue = readableObject.stringValue else {
+        return
+      }
+
       AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-      found(code: stringValue)
+
+      handleMetadataObject(stringValue)
     }
   }
 
-  func found(code: String) {
-    print(code)
-    call(code: code)
-    showAlert(title: "Code trouvé", message: "Connexion en cours…")
+  func handleMetadataObject(_ metadataObject: String) {
+    if (!metadataObject.hasPrefix("sportsfun:")) {
+      showAlert(title: "Erreur", message: "Le QR code n'est pas valide")
+    } else {
+      showAlert(title: "Code trouvé", message: "Envoi en cours…", handler: { action in
+        self.dismiss(animated: true)
+      })
+      sendToken(metadataObject)
+    }
   }
 
-  func call(code: String) {
-    if (!code.hasPrefix("sportsfun:")) {
-      showAlert(title: "Erreur", message: "Le QR code est invalide")
-    }
+  func sendToken(_ token: String) {
+    print(token)
     // TODO Send the token
   }
 
-  func showAlert(title: String, message: String) {
-    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-      switch action.style{
-      case .default:
-        self.dismiss(animated: true)
-      case .cancel:
-        print("cancel")
-      case .destructive:
-        print("destructive")
-      }}))
-    self.present(alert, animated: true, completion: nil)
-  }
-
-  override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-    return .portrait
+  func showAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)? = nil) {
+    let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    ac.addAction(UIAlertAction(title: "OK", style: .default, handler: handler))
+    present(ac, animated: true)
   }
 
 }

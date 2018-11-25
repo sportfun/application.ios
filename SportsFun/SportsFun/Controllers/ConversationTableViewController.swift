@@ -24,7 +24,7 @@ class ConversationTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cellIdentifier = "ConversationTableViewCell"
 
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ConversationTableViewCell  else {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ConversationTableViewCell else {
       fatalError("The dequeued cell is not an instance of ConversationTableViewCell.")
     }
 
@@ -77,26 +77,26 @@ class ConversationTableViewController: UITableViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
 
-    switch(segue.identifier ?? "") {
-    case "CreateConversation":
-      os_log("Adding a new conversation.", log: OSLog.default, type: .debug)
-    case "ShowConversation":
-      guard let conversationViewController = segue.destination as? ConversationViewController else {
-        fatalError("Unexpected destination: \(segue.destination)")
-      }
+    switch (segue.identifier ?? "") {
+      case "CreateConversation":
+        os_log("Adding a new conversation.", log: OSLog.default, type: .debug)
+      case "ShowConversation":
+        guard let conversationViewController = segue.destination as? ConversationViewController else {
+          fatalError("Unexpected destination: \(segue.destination)")
+        }
 
-      guard let selectedConversationCell = sender as? ConversationTableViewCell else {
-        fatalError("Unexpected sender: \(sender)")
-      }
+        guard let selectedConversationCell = sender as? ConversationTableViewCell else {
+          fatalError("Unexpected sender: \(sender)")
+        }
 
-      guard let indexPath = tableView.indexPath(for: selectedConversationCell) else {
-        fatalError("The selected cell is not being displayed by the table")
-      }
+        guard let indexPath = tableView.indexPath(for: selectedConversationCell) else {
+          fatalError("The selected cell is not being displayed by the table")
+        }
 
-      let selectedConversation = conversations[indexPath.row]
-      conversationViewController.conversation = selectedConversation
-    default:
-      fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        let selectedConversation = conversations[indexPath.row]
+        conversationViewController.conversation = selectedConversation
+      default:
+        fatalError("Unexpected Segue Identifier; \(segue.identifier)")
     }
   }
 

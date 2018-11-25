@@ -13,7 +13,6 @@ class ConversationViewController: UIViewController {
     }
   }
 
-
   /*
    // MARK: - Navigation
 
