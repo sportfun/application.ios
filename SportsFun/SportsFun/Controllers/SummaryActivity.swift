@@ -26,11 +26,15 @@ class SummaryActivity: UITableViewCell {
         for activity in activities {
             done += activity.timeSpent/60
         }
-        donePercent = done * 100 / userInfo.goal
-        donePercentFloat = Float(donePercent) / Float(100)
+        if (userInfo.goal > 0) {
+            donePercent = done * 100 / userInfo.goal
+            donePercentFloat = Float(donePercent) / Float(100)
+        } else {
+            donePercent = 0
+            donePercentFloat = Float(0)
+        }
         self.lDoneActivity.text = String(done)
         self.lPercentage.text = String(donePercent) + " %"
-        print(donePercentFloat)
         self.pvPercentage.progress = donePercentFloat
     }
     
