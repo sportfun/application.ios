@@ -19,9 +19,12 @@
 		386375A020A5DF370050FE91 /* Passwd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863759F20A5DF370050FE91 /* Passwd.swift */; };
 		38907BAE205C4149000944C7 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38907BAD205C4149000944C7 /* Networking.swift */; };
 		38A7FAC721A05A5200594A43 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7FAC621A05A5200594A43 /* PostCell.swift */; };
-		38A7FAC921A1BB6D00594A43 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7FAC821A1BB6D00594A43 /* CommentCell.swift */; };
-		38A7FACB21A1C04200594A43 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7FACA21A1C04200594A43 /* Comment.swift */; };
-		38A7FACD21A7023D00594A43 /* NewCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7FACC21A7023D00594A43 /* NewCommentCell.swift */; };
+		38A7FACE21A9C8F000594A43 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7FACA21A1C04200594A43 /* Comment.swift */; };
+		38A7FACF21A9C8FF00594A43 /* NewCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7FACC21A7023D00594A43 /* NewCommentCell.swift */; };
+		38A7FAD021A9C91400594A43 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7FAC821A1BB6D00594A43 /* CommentCell.swift */; };
+		38A7FAD221AAE21600594A43 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7FAD121AAE21600594A43 /* Session.swift */; };
+		38A7FAD421AAE2D000594A43 /* SummaryActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7FAD321AAE2D000594A43 /* SummaryActivity.swift */; };
+		38A7FAD621AB14D000594A43 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7FAD521AB14D000594A43 /* Activity.swift */; };
 		38B847F9205EA24800B02CFF /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B847F8205EA24800B02CFF /* UserInfo.swift */; };
 		38B847FB205EACB900B02CFF /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B847FA205EACB900B02CFF /* Date.swift */; };
 		38C14D152052CA7300F1A7D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C14D142052CA7300F1A7D4 /* AppDelegate.swift */; };
@@ -87,6 +90,9 @@
 		38A7FAC821A1BB6D00594A43 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		38A7FACA21A1C04200594A43 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		38A7FACC21A7023D00594A43 /* NewCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommentCell.swift; sourceTree = "<group>"; };
+		38A7FAD121AAE21600594A43 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		38A7FAD321AAE2D000594A43 /* SummaryActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryActivity.swift; sourceTree = "<group>"; };
+		38A7FAD521AB14D000594A43 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		38B847F8205EA24800B02CFF /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		38B847FA205EACB900B02CFF /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		38C14D112052CA7300F1A7D4 /* SportsFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,6 +221,7 @@
 		38C14D422052CBD500F1A7D4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				38A7FAD521AB14D000594A43 /* Activity.swift */,
 				380485F0205D6FEE0029A52A /* Login.swift */,
 				38B847F8205EA24800B02CFF /* UserInfo.swift */,
 				38C69EA920AF1DDC00340D74 /* Password.swift */,
@@ -267,6 +274,8 @@
 				381DADD721860D7400B607E9 /* EditNews.swift */,
 				38A7FAC821A1BB6D00594A43 /* CommentCell.swift */,
 				38A7FACC21A7023D00594A43 /* NewCommentCell.swift */,
+				38A7FAD121AAE21600594A43 /* Session.swift */,
+				38A7FAD321AAE2D000594A43 /* SummaryActivity.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -415,8 +424,9 @@
 				8C0D61EA21A8FB4700E9DA0A /* AccountDetails.swift in Sources */,
 				8C0D61EC21A8FB4700E9DA0A /* Message.swift in Sources */,
 				8C0D61E821A8FB4700E9DA0A /* ConversationTableViewController.swift in Sources */,
-				381DADD821860D7400B607E9 /* editNews.swift in Sources */,
+				381DADD821860D7400B607E9 /* EditNews.swift in Sources */,
 				380485F1205D6FEE0029A52A /* Login.swift in Sources */,
+				38A7FACE21A9C8F000594A43 /* Comment.swift in Sources */,
 				38C299D320AF2835005AE9F1 /* Account.swift in Sources */,
 				8C0D61ED21A8FB4700E9DA0A /* NewConversationViewController.swift in Sources */,
 				38907BAE205C4149000944C7 /* Networking.swift in Sources */,
@@ -428,20 +438,24 @@
 				8C0D61EB21A8FB4700E9DA0A /* UserTableViewCell.swift in Sources */,
 				8C0D61E421A8FB4700E9DA0A /* AccountCategory.swift in Sources */,
 				3802A7CA214996A50058CC41 /* NewPost.swift in Sources */,
+				38A7FAD421AAE2D000594A43 /* SummaryActivity.swift in Sources */,
+				38A7FAD021A9C91400594A43 /* CommentCell.swift in Sources */,
+				38A7FAD221AAE21600594A43 /* Session.swift in Sources */,
 				386273B820B3120900AF59F9 /* Posts.swift in Sources */,
 				38020956218C83AF00919CEB /* Check.swift in Sources */,
 				386273BA20B436C000AF59F9 /* NewsFeed.swift in Sources */,
 				8C0D61E721A8FB4700E9DA0A /* AccountCategoryCellTableViewCell.swift in Sources */,
 				8C0D61E921A8FB4700E9DA0A /* ConversationViewController.swift in Sources */,
+				38A7FAD621AB14D000594A43 /* Activity.swift in Sources */,
 				8CB5C38F21A9C53E00F36D79 /* Category.swift in Sources */,
 				38C14D482052DE5E00F1A7D4 /* Inscription.swift in Sources */,
-				3802A7C821497FD40058CC41 /* createNews.swift in Sources */,
+				3802A7C821497FD40058CC41 /* CreateNews.swift in Sources */,
 				8C0D61E621A8FB4700E9DA0A /* UserTableViewController.swift in Sources */,
 				38C14D152052CA7300F1A7D4 /* AppDelegate.swift in Sources */,
 				8C0D61DF21A8FB4700E9DA0A /* UserSearchViewController.swift in Sources */,
-				381DADDA21860EA400B607E9 /* Post.swift in Sources */,
 				3844158B20A5D0D8008A1E53 /* Identity.swift in Sources */,
 				38B847F9205EA24800B02CFF /* UserInfo.swift in Sources */,
+				38A7FACF21A9C8FF00594A43 /* NewCommentCell.swift in Sources */,
 				38A7FAC721A05A5200594A43 /* PostCell.swift in Sources */,
 				8C0D61E021A8FB4700E9DA0A /* ScannerViewController.swift in Sources */,
 				8C0D61E121A8FB4700E9DA0A /* User.swift in Sources */,

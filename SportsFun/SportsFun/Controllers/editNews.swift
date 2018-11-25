@@ -6,7 +6,6 @@
 //  Copyright © 2018 benjamin malbrel. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class EditNews : UIViewController {
@@ -35,7 +34,6 @@ class EditNews : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(postID)
         getComments()
         self.hideKeyboardWhenTappedAround()
         tableView.rowHeight = UITableView.automaticDimension

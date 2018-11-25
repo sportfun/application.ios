@@ -62,11 +62,11 @@ class BioGoal : UIViewController {
                 }
             }
         }
-        
         lError.text = ""
     }
     
     @IBAction func clicConfirmer(sender : UIButton) {
+        lError.text = ""
         if let goal = Int(tfGoal.text!), let bio = tvBio.text, bio != "" {
             let url : String =  "/user"
             let param : String = "username=\(self.userInfo.username)&email=\(self.userInfo.email)&firstName=\(self.userInfo.firstName)&lastName=\(self.userInfo.lastName)&birthDate=\(self.userInfo.birthDate)&bio=\(bio)&coverPic=\"\"&profilePic=\"\"&roles=[]&goal=\(goal)"
