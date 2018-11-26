@@ -5,10 +5,8 @@
 //  Created by benjamin malbrel on 12/09/2018.
 //  Copyright © 2018 benjamin malbrel. All rights reserved.
 //
-
 import Foundation
 import UIKit
-
 class CreateNews : UIViewController {
     @IBOutlet var tvContent : UITextView!
     @IBOutlet var bConfirmer : UIButton!
@@ -40,7 +38,7 @@ class CreateNews : UIViewController {
         tvContent.layer.borderWidth = 0.5
         tvContent.clipsToBounds = true
     }
-    
+
     @IBAction func clicConfirmer(sender : UIButton) {
         if let content = tvContent.text, content != "" {
             let url : String =  "/post"

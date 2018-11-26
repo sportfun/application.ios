@@ -9,7 +9,6 @@
 import UIKit
 
 class SummaryActivity: UITableViewCell {
-    
     @IBOutlet weak var vLeftRect: UIView!
     @IBOutlet weak var vRightRect: UIView!
     @IBOutlet weak var lDoneActivity: UILabel!
@@ -24,8 +23,9 @@ class SummaryActivity: UITableViewCell {
         
         self.lShouldActivity.text = String(userInfo.goal)
         for activity in activities {
-            done += activity.timeSpent/60
+            done += activity.timeSpent
         }
+        done = done / 60
         if (userInfo.goal > 0) {
             donePercent = done * 100 / userInfo.goal
             donePercentFloat = Float(donePercent) / Float(100)

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		38020956218C83AF00919CEB /* Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38020955218C83AF00919CEB /* Check.swift */; };
-		3802A7C821497FD40058CC41 /* CreateNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3802A7C721497FD40058CC41 /* CreateNews.swift */; };
 		3802A7CA214996A50058CC41 /* NewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3802A7C9214996A50058CC41 /* NewPost.swift */; };
 		380485F1205D6FEE0029A52A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380485F0205D6FEE0029A52A /* Login.swift */; };
 		381DADD821860D7400B607E9 /* EditNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381DADD721860D7400B607E9 /* EditNews.swift */; };
@@ -38,6 +37,9 @@
 		38C299D320AF2835005AE9F1 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C299D220AF2835005AE9F1 /* Account.swift */; };
 		38C69EA620A9ACE100340D74 /* BioGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C69EA520A9ACE100340D74 /* BioGoal.swift */; };
 		38C69EAA20AF1DDC00340D74 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C69EA920AF1DDC00340D74 /* Password.swift */; };
+		38F236F521AC562F0070EB0B /* CreateNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F236F421AC562F0070EB0B /* CreateNews.swift */; };
+		38F236F721AC57020070EB0B /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F236F621AC57020070EB0B /* ActivityCell.swift */; };
+		38F236F921AC5A380070EB0B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F236F821AC5A380070EB0B /* Game.swift */; };
 		8C0D61CF21A8FAD400E9DA0A /* NavigationBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0D61CD21A8FAD400E9DA0A /* NavigationBar.storyboard */; };
 		8C0D61DF21A8FB4700E9DA0A /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D021A8FB4600E9DA0A /* UserSearchViewController.swift */; };
 		8C0D61E021A8FB4700E9DA0A /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D121A8FB4600E9DA0A /* ScannerViewController.swift */; };
@@ -80,7 +82,6 @@
 
 /* Begin PBXFileReference section */
 		38020955218C83AF00919CEB /* Check.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Check.swift; sourceTree = "<group>"; };
-		3802A7C721497FD40058CC41 /* CreateNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNews.swift; sourceTree = "<group>"; };
 		3802A7C9214996A50058CC41 /* NewPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPost.swift; sourceTree = "<group>"; };
 		380485F0205D6FEE0029A52A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		381DADD721860D7400B607E9 /* EditNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNews.swift; sourceTree = "<group>"; };
@@ -116,6 +117,9 @@
 		38C299D220AF2835005AE9F1 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		38C69EA520A9ACE100340D74 /* BioGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioGoal.swift; sourceTree = "<group>"; };
 		38C69EA920AF1DDC00340D74 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
+		38F236F421AC562F0070EB0B /* CreateNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNews.swift; sourceTree = "<group>"; };
+		38F236F621AC57020070EB0B /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		38F236F821AC5A380070EB0B /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		8C0D61CE21A8FAD400E9DA0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NavigationBar.storyboard; sourceTree = "<group>"; };
 		8C0D61D021A8FB4600E9DA0A /* UserSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSearchViewController.swift; path = SportsFun/Controllers/UserSearchViewController.swift; sourceTree = SOURCE_ROOT; };
 		8C0D61D121A8FB4600E9DA0A /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScannerViewController.swift; path = SportsFun/Controllers/ScannerViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -233,6 +237,7 @@
 				8CF5A82121AB127D003D08BA /* Message.swift */,
 				8CF5A81F21AB127D003D08BA /* Conversation.swift */,
 				8CF5A82021AB127D003D08BA /* User.swift */,
+				38F236F821AC5A380070EB0B /* Game.swift */,
 				380485F0205D6FEE0029A52A /* Login.swift */,
 				38B847F8205EA24800B02CFF /* UserInfo.swift */,
 				38C69EA920AF1DDC00340D74 /* Password.swift */,
@@ -282,12 +287,13 @@
 				38C299D220AF2835005AE9F1 /* Account.swift */,
 				386273B920B436C000AF59F9 /* NewsFeed.swift */,
 				38A7FAC621A05A5200594A43 /* PostCell.swift */,
-				3802A7C721497FD40058CC41 /* CreateNews.swift */,
+				38F236F421AC562F0070EB0B /* CreateNews.swift */,
 				381DADD721860D7400B607E9 /* EditNews.swift */,
 				38A7FAC821A1BB6D00594A43 /* CommentCell.swift */,
 				38A7FACC21A7023D00594A43 /* NewCommentCell.swift */,
 				38A7FAD121AAE21600594A43 /* Session.swift */,
 				38A7FAD321AAE2D000594A43 /* SummaryActivity.swift */,
+				38F236F621AC57020070EB0B /* ActivityCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -466,13 +472,15 @@
 				38A7FAD621AB14D000594A43 /* Activity.swift in Sources */,
 				8CB5C38F21A9C53E00F36D79 /* Category.swift in Sources */,
 				38C14D482052DE5E00F1A7D4 /* Inscription.swift in Sources */,
-				3802A7C821497FD40058CC41 /* CreateNews.swift in Sources */,
 				8C0D61E621A8FB4700E9DA0A /* UserTableViewController.swift in Sources */,
 				38C14D152052CA7300F1A7D4 /* AppDelegate.swift in Sources */,
 				8C0D61DF21A8FB4700E9DA0A /* UserSearchViewController.swift in Sources */,
 				3844158B20A5D0D8008A1E53 /* Identity.swift in Sources */,
 				38B847F9205EA24800B02CFF /* UserInfo.swift in Sources */,
+				38F236F721AC57020070EB0B /* ActivityCell.swift in Sources */,
+				38F236F521AC562F0070EB0B /* CreateNews.swift in Sources */,
 				38A7FACF21A9C8FF00594A43 /* NewCommentCell.swift in Sources */,
+				38F236F921AC5A380070EB0B /* Game.swift in Sources */,
 				38A7FAC721A05A5200594A43 /* PostCell.swift in Sources */,
 				8C0D61E021A8FB4700E9DA0A /* ScannerViewController.swift in Sources */,
 				8C0D61E521A8FB4700E9DA0A /* ConversationTableViewCell.swift in Sources */,
