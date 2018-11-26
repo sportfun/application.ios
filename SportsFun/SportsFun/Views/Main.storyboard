@@ -148,13 +148,73 @@
                                             <outlet property="vRightRect" destination="Jr4-uC-pCR" id="0PJ-ND-A20"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Activity" id="0LX-Fg-Plg">
-                                        <rect key="frame" x="0.0" y="286" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityCell" rowHeight="111" id="0LX-Fg-Plg" customClass="ActivityCell" customModule="SportsFun" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="286" width="375" height="111"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0LX-Fg-Plg" id="zcR-Ki-SVn">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0LX-Fg-Plg" id="zcR-Ki-SVn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="cycle" translatesAutoresizingMaskIntoConstraints="NO" id="fBe-JB-WFX">
+                                                    <rect key="frame" x="12" y="12" width="86.5" height="86.5"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="9Fp-Bs-LeI"/>
+                                                        <constraint firstAttribute="width" secondItem="fBe-JB-WFX" secondAttribute="height" multiplier="1:1" id="lcM-zL-OUq"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" ambiguous="YES" text="Type d'effort: Sport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEy-6b-emg">
+                                                    <rect key="frame" x="111" y="12" width="253" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="le 11/05/2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3os-0K-GCf">
+                                                    <rect key="frame" x="110.5" y="45" width="252.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yEt-TX-8ne">
+                                                    <rect key="frame" x="0.0" y="110.5" width="375" height="5"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="5" id="q0e-gb-eN6"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Pendant 8 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fso-4E-IDl">
+                                                    <rect key="frame" x="110.5" y="78" width="252.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="yEt-TX-8ne" secondAttribute="trailing" id="0B2-5D-lv4"/>
+                                                <constraint firstAttribute="trailing" secondItem="Fso-4E-IDl" secondAttribute="trailing" constant="12" id="0xx-yw-Ilf"/>
+                                                <constraint firstItem="Fso-4E-IDl" firstAttribute="leading" secondItem="fBe-JB-WFX" secondAttribute="trailing" constant="12" id="0yZ-V1-WVR"/>
+                                                <constraint firstAttribute="trailing" secondItem="DEy-6b-emg" secondAttribute="trailing" constant="12" id="Bet-mH-Fsn"/>
+                                                <constraint firstItem="Fso-4E-IDl" firstAttribute="top" secondItem="3os-0K-GCf" secondAttribute="bottom" constant="12" id="C3S-0q-cHv"/>
+                                                <constraint firstAttribute="trailing" secondItem="3os-0K-GCf" secondAttribute="trailing" constant="12" id="CUt-cj-6AR"/>
+                                                <constraint firstAttribute="bottom" secondItem="yEt-TX-8ne" secondAttribute="bottom" constant="-1" id="FD0-8l-eyI"/>
+                                                <constraint firstItem="yEt-TX-8ne" firstAttribute="top" secondItem="fBe-JB-WFX" secondAttribute="bottom" constant="12" id="JI6-sp-geR"/>
+                                                <constraint firstItem="DEy-6b-emg" firstAttribute="leading" secondItem="fBe-JB-WFX" secondAttribute="trailing" constant="12" id="Mcb-9c-3qB"/>
+                                                <constraint firstItem="3os-0K-GCf" firstAttribute="top" secondItem="DEy-6b-emg" secondAttribute="bottom" constant="12" id="WIT-nb-NKI"/>
+                                                <constraint firstItem="yEt-TX-8ne" firstAttribute="top" secondItem="Fso-4E-IDl" secondAttribute="bottom" constant="12" id="Xlm-HW-6VJ"/>
+                                                <constraint firstItem="fBe-JB-WFX" firstAttribute="top" secondItem="zcR-Ki-SVn" secondAttribute="top" constant="12" id="c9Y-5h-Qw8"/>
+                                                <constraint firstItem="fBe-JB-WFX" firstAttribute="leading" secondItem="zcR-Ki-SVn" secondAttribute="leading" constant="12" id="f08-Yh-iSo"/>
+                                                <constraint firstItem="3os-0K-GCf" firstAttribute="leading" secondItem="fBe-JB-WFX" secondAttribute="trailing" constant="12" id="iC4-JD-OSb"/>
+                                                <constraint firstItem="yEt-TX-8ne" firstAttribute="leading" secondItem="zcR-Ki-SVn" secondAttribute="leading" id="is7-TO-5xB"/>
+                                                <constraint firstItem="DEy-6b-emg" firstAttribute="top" secondItem="zcR-Ki-SVn" secondAttribute="top" constant="12" id="teO-3L-MRQ"/>
+                                                <constraint firstItem="yEt-TX-8ne" firstAttribute="top" secondItem="Fso-4E-IDl" secondAttribute="bottom" constant="12" id="tpo-8F-PlR"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ivGameImage" destination="fBe-JB-WFX" id="ys7-0X-2pb"/>
+                                            <outlet property="lDate" destination="3os-0K-GCf" id="IG1-m1-hI6"/>
+                                            <outlet property="lTemps" destination="Fso-4E-IDl" id="TH7-S0-G0t"/>
+                                            <outlet property="lType" destination="DEy-6b-emg" id="kkx-X8-31j"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

@@ -42,6 +42,7 @@ class Session: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         self.getGoal()
+        self.getGames()
         self.getActivities()
     }
     
@@ -63,6 +64,26 @@ class Session: UIViewController {
                 }
             }
         }
+    }
+    
+    func getGames() {
+//        let url : String = "/game"
+//        self.networking.querryWithGet(urlString: url) { data in
+//            if let data = data {
+//                do {
+//                    let decoder = JSONDecoder()
+//                    let userInfo = try decoder.decode(UserInfo.self, from: data)
+//                    if userInfo.success == false {
+//                        print("Problème de connexion avec le serveur")
+//                    } else {
+//                        self.userInfo = userInfo.data!
+//                        self.tableView.reloadData()
+//                    }
+//                } catch {
+//                    print("error:", error)
+//                }
+//            }
+//        }
     }
     
     func getActivities() {
@@ -89,30 +110,29 @@ class Session: UIViewController {
 extension Session: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if ((self.userInfo) != nil) {
-            return 1
+            return activities.count + 1
         } else {
             return 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SummaryActivity") as! SummaryActivity
-        
-        cell.selectionStyle = UITableViewCell.SelectionStyle.none
-        cell.setCell(userInfo: self.userInfo, activities: self.activities)
-        
-        return cell
-        //        if (indexPath.row == 0) {
-//            
-//        } else {
-//            print("prout")
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "SummaryActivity") as! SummaryActivity
-//
-//
-//            cell.selectionStyle = UITableViewCell.SelectionStyle.none
-//
-//            return cell
-//        }
+        if (indexPath.row == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SummaryActivity") as! SummaryActivity
+            
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            cell.setCell(userInfo: self.userInfo, activities: self.activities)
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCell") as! ActivityCell
+            
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            cell.setCell(activity: self.activities[indexPath.row - 1])
+            
+            
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
