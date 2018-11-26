@@ -2,6 +2,7 @@ import Foundation
 
 enum Endpoint: String {
   case userSearch = "/api/user/p/%@"
+  case userFollow = "/api/user/link/%@"
 }
 
 struct SportsFunAPI {
@@ -15,6 +16,10 @@ struct SportsFunAPI {
 
   static func userSearch(username: String) -> URL {
     return sportsFunURL(endpoint: String(format: Endpoint.userSearch.rawValue, username))
+  }
+
+  static func userFollow(id: String) -> URL {
+    return sportsFunURL(endpoint: String(format: Endpoint.userFollow.rawValue, id))
   }
 
 }

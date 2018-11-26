@@ -106,8 +106,8 @@ class ConversationTableViewController: UITableViewController {
     let photo1 = UIImage(named: "defaultPhoto")
     let photo2 = UIImage(named: "defaultPhoto")
 
-    let user1 = User(firstName: "Anthony", lastName: "Riquet", username: "antho", photo: photo1)
-    let user2 = User(firstName: "Marie", lastName: "Rivière", username: "marie974", photo: photo2)
+    let user1 = User(id: "1", firstName: "Anthony", lastName: "Riquet", username: "antho", photo: photo1)
+    let user2 = User(id: "2", firstName: "Marie", lastName: "Rivière", username: "marie974", photo: photo2)
 
     guard let conversation1 = Conversation(recipient: user1!, messages: [Message]()) else {
       fatalError("Unable to instantiate conversation1")

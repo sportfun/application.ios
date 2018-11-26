@@ -11,7 +11,7 @@ class SessionNetworking {
 
   // TODO: Use Success and Failure enum
   // http://alisoftware.github.io/swift/async/error/2016/02/06/async-errors/
-  static func get(url: URL, completionHandler: @escaping (_ data: Any) -> Void, withToken: Bool) throws {
+  static func get(url: URL, completionHandler: @escaping (_ data: JSONObject) -> Void, withToken: Bool) throws {
     let request = try self.makeGetUrlRequest(url: url, withToken: true)
 
     let task = session.dataTask(with: request, completionHandler: {
@@ -19,24 +19,40 @@ class SessionNetworking {
       if let jsonData = data {
         do {
           let decoded = try JSONSerialization.jsonObject(with: jsonData)
-          if let jsonObject = decoded as? [String: Any] {
-            if (jsonObject["success"] as? Int != 1) {
-              if let message = jsonObject["message"] as? String {
-                throw NSError(domain: message, code: 42)
-              } else {
-                throw NSError(domain: "Unknown error", code: 42)
-              }
-            } else if let data = jsonObject["data"] {
-              completionHandler(data)
-            }
+          if let jsonObject = decoded as? JSONObject {
+            completionHandler(jsonObject)
+          } else {
+            completionHandler(["Success": false])
           }
         } catch {
-          //throw error
+          completionHandler(["Success": false])
         }
-      } else if let requestError = error {
-        //throw NSError(domain: "Error fetching \(url.path): \(requestError)", code: 42)
       } else {
-        //throw NSError(domain: "Unexpected error with the request", code: 42)
+        completionHandler(["Success": false])
+      }
+    })
+
+    task.resume()
+  }
+
+  static func put(url: URL, completionHandler: @escaping (_ data: JSONObject) -> Void, withToken: Bool) throws {
+    let request = try self.makePutUrlRequest(url: url, withToken: true)
+
+    let task = session.dataTask(with: request, completionHandler: {
+      (data, response, error) -> Void in
+      if let jsonData = data {
+        do {
+          let decoded = try JSONSerialization.jsonObject(with: jsonData)
+          if let jsonObject = decoded as? JSONObject {
+            completionHandler(jsonObject)
+          } else {
+            completionHandler(["Success": false])
+          }
+        } catch {
+          completionHandler(["Success": false])
+        }
+      } else {
+        completionHandler(["Success": false])
       }
     })
 
@@ -45,6 +61,10 @@ class SessionNetworking {
 
   private static func makeGetUrlRequest(url: URL, withToken: Bool) throws -> URLRequest {
     return try makeUrlRequest(url: url, httpMethod: "GET", withToken: withToken)
+  }
+
+  private static func makePutUrlRequest(url: URL, withToken: Bool) throws -> URLRequest {
+    return try makeUrlRequest(url: url, httpMethod: "PUT", withToken: withToken)
   }
 
   private static func makePostUrlRequest(url: URL, withToken: Bool, jsonObject: JSONObject = [:]) throws -> URLRequest {
@@ -57,7 +77,15 @@ class SessionNetworking {
     rq.addValue("application/json", forHTTPHeaderField: "Content-Type")
     rq.addValue("application/json", forHTTPHeaderField: "Accept")
     if (withToken) {
-      rq.addValue("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmRlYzdkMTE0YzhmZDAwMTFkMDhiMTAiLCJpYXQiOjE1NDMxMjAxMzJ9.IEUh3Ur2BUtN02UNSmlStAZTx5c6QoKCrzcZREltPNI", forHTTPHeaderField: "token")
+      do {
+        if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+          let fileURL = documentDirectory.appendingPathComponent("token.txt")
+          let token = try String(contentsOf: fileURL)
+          rq.addValue(token, forHTTPHeaderField: "token")
+        }
+      } catch {
+        print(error)
+      }
     }
     if (!jsonObject.isEmpty) {
       rq.httpBody = try JSONSerialization.data(withJSONObject: jsonObject)

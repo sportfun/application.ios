@@ -35,7 +35,7 @@
         <!--Résultats-->
         <scene sceneID="pG9-hC-wTO">
             <objects>
-                <tableViewController id="dK2-ua-jBz" customClass="UserTableViewController" customModule="SportsFun" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="dK2-ua-jBz" customClass="UserSearchResultsTableViewController" customModule="SportsFun" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zmb-Wz-V79">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,7 +101,7 @@
         <!--User Profile-->
         <scene sceneID="X2P-EL-E5t">
             <objects>
-                <viewController id="eUP-b2-2w7" userLabel="User Profile" sceneMemberID="viewController">
+                <viewController id="eUP-b2-2w7" userLabel="User Profile" customClass="UserProfileViewController" customModule="SportsFun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rpA-Zj-eFI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,21 +124,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFp-lK-PWY">
+                                <rect key="frame" x="16" y="274" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Suivre">
+                                    <color key="titleColor" red="0.90196078430000004" green="0.4941176471" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="followButtonTapped:" destination="eUP-b2-2w7" eventType="touchUpInside" id="fPX-iT-TVL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="e0u-fH-arS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profil" id="Wso-ku-xMb">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="bAR-zk-GyR">
+                            <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="Ci3-wz-IWp" kind="presentation" id="yFd-hR-lQp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="followButton" destination="IFp-lK-PWY" id="f64-nZ-L5X"/>
+                        <outlet property="fullNameLabel" destination="mHt-9F-35I" id="RIC-eU-Nep"/>
+                        <outlet property="photoImageView" destination="uW3-UY-9w9" id="SUw-jG-twp"/>
+                        <outlet property="usernameLabel" destination="XmR-Oh-xxJ" id="bGt-lM-cLQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WIa-sW-iw6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-882" y="7778"/>
+            <point key="canvasLocation" x="-882.39999999999998" y="7777.9610194902552"/>
         </scene>
         <!--New Conversation-->
         <scene sceneID="5kO-22-EkI">
@@ -168,11 +185,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Nouvelle conversation" id="kCf-ei-1Nb">
                         <barButtonItem key="leftBarButtonItem" title="Annuler" id="wpk-GM-6eh">
+                            <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="cancel:" destination="wLl-ft-Vzi" id="h0C-OQ-PHV"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Envoyer" id="ujt-Vh-Rdb"/>
+                        <barButtonItem key="rightBarButtonItem" title="Envoyer" id="ujt-Vh-Rdb">
+                            <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HTX-uf-Vko" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -215,7 +235,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ir9-sP-s86">
                                 <rect key="frame" x="148" y="118" width="79" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Rechercher"/>
+                                <state key="normal" title="Rechercher">
+                                    <color key="titleColor" red="0.90196078430000004" green="0.4941176471" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="searchButtonTapped:" destination="C4P-x8-tTF" eventType="touchUpInside" id="x9F-fU-sq9"/>
                                 </connections>
@@ -226,12 +248,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Recherche" id="mhk-rm-QFc">
                         <barButtonItem key="rightBarButtonItem" title="Annuler" id="Phr-Jp-w3E">
+                            <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="cancel:" destination="C4P-x8-tTF" id="1LI-yV-Gjb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchTextField" destination="1Ir-cu-LsO" id="4hZ-TJ-5gW"/>
                         <segue destination="dK2-ua-jBz" kind="show" identifier="ShowSearchResults" id="lPg-0s-7i3"/>
                     </connections>
                 </viewController>
@@ -279,4 +303,5 @@
     <resources>
         <image name="defaultPhoto" width="250" height="250"/>
     </resources>
+    <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

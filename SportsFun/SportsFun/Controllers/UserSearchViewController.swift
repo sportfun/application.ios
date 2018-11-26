@@ -4,7 +4,8 @@ class UserSearchViewController: UIViewController {
 
   // MARK: Properties
 
-  var showSearchResultsSegueIdentifier = "ShowSearchResults"
+  let showSearchResultsSegueIdentifier = "ShowSearchResults"
+  var results = [User]()
 
   @IBOutlet weak var searchTextField: UITextField!
 
@@ -17,8 +18,40 @@ class UserSearchViewController: UIViewController {
   // MARK: Actions
 
   @IBAction func searchButtonTapped(_ sender: UIButton) {
-    if let username = searchTextField.text, username.count > 3 {
-      performSegue(withIdentifier: showSearchResultsSegueIdentifier, sender: sender)
+    if let username = searchTextField.text, username.count > 2 {
+      self.results.removeAll()
+      do {
+        try SessionNetworking.get(url: SportsFunAPI.userSearch(username: username), completionHandler: {
+          (jsonObject: [String: Any]) -> Void in
+          if let results = jsonObject["data"] as? [[String: Any]] {
+            for result in results {
+              do {
+                var photo = UIImage(named: "defaultPhoto")
+                if let photoURLString = result["profilePic"] as? String, photoURLString.count > 2 {
+                  if (photoURLString.hasPrefix("/")) {
+                    let photoData = try Data(contentsOf: SportsFunAPI.baseURL!.appendingPathComponent(photoURLString))
+                    photo = UIImage(data: photoData)
+                  } else {
+                    let photoData = try Data(contentsOf: URL(string: photoURLString)!)
+                    photo = UIImage(data: photoData)
+                  }
+                }
+                guard let user = User(id: result["_id"] as! String, firstName: result["firstName"] as! String, lastName: result["lastName"] as! String, username: result["username"] as! String, photo: photo) else {
+                  fatalError("Unable to instantiate user")
+                }
+                self.results.append(user)
+              } catch {
+                print(error)
+              }
+            }
+            DispatchQueue.main.async {
+              self.performSegue(withIdentifier: self.showSearchResultsSegueIdentifier, sender: sender)
+            }
+          }
+        }, withToken: true)
+      } catch {
+        print(error)
+      }
     }
   }
 
@@ -26,38 +59,11 @@ class UserSearchViewController: UIViewController {
     super.prepare(for: segue, sender: sender)
 
     if segue.identifier == showSearchResultsSegueIdentifier {
-      if let username = searchTextField.text, username.count > 2 {
-        guard let userSearchResultsTableViewController = segue.destination as? UserSearchResultsTableViewController else {
-          fatalError("Unexpected destination: \(segue.destination)")
-        }
-
-        var users = [User]()
-
-        // TODO: Do that in the segue action
-        do {
-          try SessionNetworking.get(url: SportsFunAPI.userSearch(username: username), completionHandler: {
-            (jsonObject: Any) -> Void in
-            if let results = jsonObject as? [[String: Any]] {
-              for result in results {
-                do {
-                  let photoUrl = (result["profilePic"] as! String).hasPrefix("/") ? SportsFunAPI.baseURL?.appendingPathComponent(result["profilePic"] as! String) : URL(string: result["profilePic"] as! String)
-                  let photoData = try Data(contentsOf: photoUrl!)
-                  guard let user = User(firstName: result["firstName"] as! String, lastName: result["lastName"] as! String, username: result["username"] as! String, photo: UIImage(data: photoData)) else {
-                    fatalError("Unable to instantiate user")
-                  }
-                  users.append(user)
-                } catch {
-                  print(error)
-                }
-              }
-            }
-            userSearchResultsTableViewController.users = users
-          }, withToken: true)
-        } catch {
-          print(error)
-          userSearchResultsTableViewController.users = []
-        }
+      guard let userSearchResultsTableViewController = segue.destination as? UserSearchResultsTableViewController else {
+        fatalError("Unexpected destination: \(segue.destination)")
       }
+
+      userSearchResultsTableViewController.users = results
     }
   }
 

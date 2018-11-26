@@ -7,6 +7,35 @@ class UserProfileViewController: UIViewController {
   @IBOutlet weak var photoImageView: UIImageView!
   @IBOutlet weak var fullNameLabel: UILabel!
   @IBOutlet weak var usernameLabel: UILabel!
+  @IBOutlet weak var followButton: UIButton!
+
+  @IBAction func followButtonTapped(_ sender: Any) {
+    do {
+      followButton.isEnabled = false
+      try SessionNetworking.put(url: SportsFunAPI.userFollow(id: user.id), completionHandler: {
+        (jsonObject: [String: Any]) -> Void in
+        print(jsonObject)
+        if let success = jsonObject["Success"] as? Bool, !success {
+          DispatchQueue.main.async {
+            self.followButton.isEnabled = true
+          }
+        } else if let success = jsonObject["success"] as? Bool, success {
+          DispatchQueue.main.async {
+            if self.followButton.title(for: .normal) == "Suivre" {
+              self.followButton.setTitle("Ne plus suivre", for: .normal)
+            } else {
+              self.followButton.setTitle("Suivre", for: .normal)
+            }
+          }
+        }
+        DispatchQueue.main.async {
+          self.followButton.isEnabled = true
+        }
+      }, withToken: true)
+    } catch {
+      print(error)
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
