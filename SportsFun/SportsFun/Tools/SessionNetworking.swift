@@ -35,8 +35,8 @@ class SessionNetworking {
     task.resume()
   }
 
-  static func put(url: URL, completionHandler: @escaping (_ data: JSONObject) -> Void, withToken: Bool) throws {
-    let request = try self.makePutUrlRequest(url: url, withToken: true)
+  static func put(url: URL, jsonObject: JSONObject, completionHandler: @escaping (_ data: JSONObject) -> Void, withToken: Bool) throws {
+    let request = try self.makePutUrlRequest(url: url, withToken: true, jsonObject: jsonObject)
 
     let task = session.dataTask(with: request, completionHandler: {
       (data, response, error) -> Void in
@@ -63,8 +63,8 @@ class SessionNetworking {
     return try makeUrlRequest(url: url, httpMethod: "GET", withToken: withToken)
   }
 
-  private static func makePutUrlRequest(url: URL, withToken: Bool) throws -> URLRequest {
-    return try makeUrlRequest(url: url, httpMethod: "PUT", withToken: withToken)
+  private static func makePutUrlRequest(url: URL, withToken: Bool, jsonObject: JSONObject = [:]) throws -> URLRequest {
+    return try makeUrlRequest(url: url, httpMethod: "PUT", withToken: withToken, jsonObject: jsonObject)
   }
 
   private static func makePostUrlRequest(url: URL, withToken: Bool, jsonObject: JSONObject = [:]) throws -> URLRequest {

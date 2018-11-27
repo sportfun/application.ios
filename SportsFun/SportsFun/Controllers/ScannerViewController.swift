@@ -45,9 +45,9 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     let metadataOutput = AVCaptureMetadataOutput()
 
     if (captureSession.canAddOutput(metadataOutput)) {
+      captureSession.addOutput(metadataOutput)
       metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
       metadataOutput.metadataObjectTypes = [.qr]
-      captureSession.addOutput(metadataOutput)
     } else {
       showAlert(title: "Erreur", message: "Votre appareil ne prend pas en charge le scan de QR code. Veuillez utiliser un appareil avec une caméra.")
       captureSession = nil
@@ -84,7 +84,6 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
   }
 
   func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-    captureSession.stopRunning()
 
     if let metadataObject = metadataObjects.first {
       guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else {
@@ -102,10 +101,13 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
   }
 
   func handleMetadataObject(_ metadataObject: String) {
+    captureSession.stopRunning()
     if (!metadataObject.hasPrefix("sportsfun:")) {
-      showAlert(title: "Erreur", message: "Le QR code n'est pas valide")
+      showAlert(title: "Erreur", message: "Le QR code n'est pas valide", handler: {
+        action in self.captureSession.startRunning()
+      })
     } else {
-      showAlert(title: "Code trouvé", message: "Envoi en cours…", handler: { action in
+      showAlert(title: "Code trouvé", message: "Le code a été envoyé", handler: { action in
         self.dismiss(animated: true)
       })
       sendToken(metadataObject)
@@ -113,8 +115,16 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
   }
 
   func sendToken(_ token: String) {
-    print(token)
-    // TODO Send the token
+    do {
+      try SessionNetworking.put(url: SportsFunAPI.registerCode(), jsonObject: ["qr": token], completionHandler: {
+        (jsonObject: [String: Any]) -> Void in
+        print(jsonObject)
+        if let response = jsonObject["data"] as? [[String: Any]] {
+        }
+      }, withToken: true)
+    } catch {
+      print(error)
+    }
   }
 
   func showAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)? = nil) {
