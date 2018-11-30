@@ -42,7 +42,6 @@ class Inscription : UIViewController {
     @IBAction func clicConfirm(sender: UIButton) {
         let stringFromDate = dpBirthdate.date.iso8601
         lError.text = ""
-
         if let password = tfPassword.text, let rePassword = tfRepeatPassword.text, password != "" && rePassword != "" && password == rePassword {
             if let birthDate = stringFromDate.dateFromISO8601 {
                 if let userName = tfUserName.text, let email = tfEmail.text, let firstName = tfFirstName.text, let lastName = tfLastName.text, userName != "" && email != "" && firstName != "" && lastName != "" && (check.checkUserName(userName: userName)) {
@@ -95,17 +94,12 @@ class Inscription : UIViewController {
                                                 print(error.localizedDescription)
                                             }
                                         }
-                                      }
-                                    } catch {
-                                      print("error:", error)
                                     }
-                                  }
                                 }
                             } catch let error as NSError {
                                 print(error.localizedDescription)
                             }
                         }
-                      }
                     }
                 } else {
                     lError.text = "Veuillez entrer toutes vos informations"
