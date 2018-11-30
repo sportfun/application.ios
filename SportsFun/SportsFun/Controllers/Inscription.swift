@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CryptoSwift
 
 class Inscription : UIViewController {
     
@@ -41,7 +42,9 @@ class Inscription : UIViewController {
         if let birthDate = stringFromDate.dateFromISO8601 {
             if let userName = tfUserName.text, let email = tfEmail.text, let firstName = tfFirstName.text, let lastName = tfLastName.text, let password = tfPassword.text , userName != "" && email != "" && firstName != "" && lastName != "" && password != "" && (check.checkUserName(userName: userName)) && (check.chekPassword(password: password)) {
                     var url : String =  "/user"
-                    let param : String = "username=\(userName)&email=\(email)&firstName=\(firstName)&lastName=\(lastName)&birthDate=\(birthDate.iso8601)&password=\(password)&bio=\"\""
+                    let hashString = email.trimmingCharacters(in: .whitespacesAndNewlines).lowercased().md5()
+                    let profilePic = String(format: "https://www.gravatar.com/avatar/%@", hashString)
+                    let param : String = "username=\(userName)&email=\(email)&firstName=\(firstName)&lastName=\(lastName)&birthDate=\(birthDate.iso8601)&password=\(password)&bio=\"\"&profilePic=\(profilePic.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)"
                     self.networking.querryWithPost(urlString : url, param: param) { data in
                         if let data = data {
                             do {

@@ -32,8 +32,10 @@ class UserSearchViewController: UIViewController {
                     let photoData = try Data(contentsOf: SportsFunAPI.baseURL!.appendingPathComponent(photoURLString))
                     photo = UIImage(data: photoData)
                   } else {
-                    let photoData = try Data(contentsOf: URL(string: photoURLString)!)
-                    photo = UIImage(data: photoData)
+                    if let url = URL(string: photoURLString) {
+                      let data = try Data(contentsOf: url)
+                      photo = UIImage(data: data)
+                    }
                   }
                 }
                 guard let user = User(id: result["_id"] as! String, firstName: result["firstName"] as! String, lastName: result["lastName"] as! String, username: result["username"] as! String, photo: photo) else {
