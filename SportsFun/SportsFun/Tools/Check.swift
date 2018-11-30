@@ -11,7 +11,7 @@ import Foundation
 class Check {
     init () {}
     
-    func chekPassword(password: String) -> Bool {
+  func chekPassword(password: String) -> Bool {
         return (password.count >= 8)
     }
     

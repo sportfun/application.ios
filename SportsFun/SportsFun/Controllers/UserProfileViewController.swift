@@ -12,7 +12,7 @@ class UserProfileViewController: UIViewController {
   @IBAction func followButtonTapped(_ sender: Any) {
     do {
       followButton.isEnabled = false
-      try SessionNetworking.put(url: SportsFunAPI.userFollow(id: user.id), completionHandler: {
+      try SessionNetworking.put(url: SportsFunAPI.userFollow(id: user.id), jsonObject: [:], completionHandler: {
         (jsonObject: [String: Any]) -> Void in
         print(jsonObject)
         if let success = jsonObject["Success"] as? Bool, !success {

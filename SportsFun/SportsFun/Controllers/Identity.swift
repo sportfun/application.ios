@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CryptoSwift
 
 class Identity : UIViewController {
     @IBOutlet var tfFirstName : UITextField!
@@ -66,11 +67,13 @@ class Identity : UIViewController {
         
         lError.text = ""
     }
-    
+
     @IBAction func clicConfirmer(sender: UIButton) {
         if let firstName = tfFirstName.text, let lastName = tfLastName.text, let mail = tfMail.text, firstName != "" && lastName != "" && mail != "" {
             let url : String =  "/user"
-            let param : String = "username=\(self.userInfo.username)&email=\(mail)&firstName=\(firstName)&lastName=\(lastName)&birthDate=\(self.userInfo.birthDate)&bio=\(self.userInfo.bio)&coverPic=\"\"&profilePic=\"\"&roles=[]&goal=\(self.userInfo.goal)"
+          let hashString = mail.trimmingCharacters(in: .whitespacesAndNewlines).lowercased().md5()
+          let profilePic = String(format: "https://www.gravatar.com/avatar/%@", hashString)
+            let param : String = "username=\(self.userInfo.username)&email=\(mail)&firstName=\(firstName)&lastName=\(lastName)&birthDate=\(self.userInfo.birthDate)&bio=\(self.userInfo.bio)&coverPic=\"\"&profilePic=\(profilePic.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)&roles=[]&goal=\(self.userInfo.goal)"
             self.networking.querryWithPut(urlString : url, param: param) { data in
                 if let data = data {
                     do {
