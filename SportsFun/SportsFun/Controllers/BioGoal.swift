@@ -13,6 +13,7 @@ class BioGoal : UIViewController {
     @IBOutlet var tvBio : UITextView!
     @IBOutlet var tfGoal : UITextField!
     @IBOutlet var lError : UILabel!
+    @IBOutlet var bConfirm : UIButton!
     
     let networking : Networking
     var userInfo : userInfoData!
@@ -35,6 +36,8 @@ class BioGoal : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bConfirm.layer.cornerRadius = 10
+        bConfirm.clipsToBounds = true
         self.hideKeyboardWhenTappedAround()
         tvBio.layer.cornerRadius = 5
         tvBio.layer.borderColor = UIColor.gray.withAlphaComponent(0.5).cgColor

@@ -14,6 +14,7 @@ class Password : UIViewController {
     @IBOutlet var tNPassword : UITextField!
     @IBOutlet var tRPassword : UITextField!
     @IBOutlet var lError : UILabel!
+    @IBOutlet weak var bConfirm: UIButton!
     
     let networking : Networking
     let check : Check
@@ -38,6 +39,8 @@ class Password : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bConfirm.layer.cornerRadius = 10
+        bConfirm.clipsToBounds = true
         lError.text = ""
         self.hideKeyboardWhenTappedAround()
     }

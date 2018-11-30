@@ -7,6 +7,7 @@
 //
 import Foundation
 import UIKit
+
 class CreateNews : UIViewController {
     @IBOutlet var tvContent : UITextView!
     @IBOutlet var bConfirmer : UIButton!

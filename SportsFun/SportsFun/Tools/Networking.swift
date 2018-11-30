@@ -99,4 +99,24 @@ class Networking {
         }
         task.resume()
     }
+    
+    func querryWithLock(urlString : String, param: String, completion: @escaping QuerryResult) {
+        let url = URL(string: "\(self.IPAdress)\(urlString)")!
+        var request = URLRequest(url: url)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "LOCK"
+        let param = "\(param)"
+        request.httpBody = param.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print("no connection detected: ", error!)
+                return
+            }
+            print(urlString)
+            DispatchQueue.main.async {
+                completion(data)
+            }
+        }
+        task.resume()
+    }
 }

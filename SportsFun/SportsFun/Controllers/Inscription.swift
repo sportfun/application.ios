@@ -16,7 +16,7 @@ class Inscription : UIViewController {
     @IBOutlet var tfFirstName : UITextField!
     @IBOutlet var tfLastName : UITextField!
     @IBOutlet var tfPassword : UITextField!
-    @IBOutlet var tfPasswordConfirmation : UITextField!
+    @IBOutlet var tfRepeatPassword: UITextField!
     @IBOutlet var dpBirthdate : UIDatePicker!
     @IBOutlet var bConfirm : UIButton!
     @IBOutlet var lError: UILabel!
@@ -33,6 +33,8 @@ class Inscription : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bConfirm.layer.cornerRadius = 10
+        bConfirm.clipsToBounds = true
         lError.text = ""
         self.hideKeyboardWhenTappedAround()
     }
@@ -40,77 +42,71 @@ class Inscription : UIViewController {
     @IBAction func clicConfirm(sender: UIButton) {
         let stringFromDate = dpBirthdate.date.iso8601
         lError.text = ""
-        if let birthDate = stringFromDate.dateFromISO8601 {
-          if Date() < birthDate {
-            lError.text = "La date est invalide"
-            return
-          }
-          if let userName = tfUserName.text, let email = tfEmail.text, let firstName = tfFirstName.text, let lastName = tfLastName.text, let password = tfPassword.text, let password2 = tfPasswordConfirmation.text , userName != "" && email != "" && firstName != "" && lastName != "" && password != "" && (check.checkUserName(userName: userName)) && (check.chekPassword(password: password)) {
-            if password == password2 {
-              var url : String =  "/user"
-              let hashString = email.trimmingCharacters(in: .whitespacesAndNewlines).lowercased().md5()
-              let profilePic = String(format: "https://www.gravatar.com/avatar/%@", hashString)
-              let param : String = "username=\(userName)&email=\(email)&firstName=\(firstName)&lastName=\(lastName)&birthDate=\(birthDate.iso8601)&password=\(password)&bio=\"\"&profilePic=\(profilePic.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)"
-              self.networking.querryWithPost(urlString : url, param: param) { data in
-                if let data = data {
-                  do {
-                    let decoder = JSONDecoder()
-                    let parsedRegister = try decoder.decode(Login.self, from: data)
-                    if parsedRegister.success == false {
-                      self.lError.text = parsedRegister.message
-                    } else {
-                      url = "/user/login"
-                      let param : String = "username=\(userName)&password=\(password)"
-                      self.networking.querryWithPost(urlString : url, param: param) { data in
+        if let password = tfPassword.text, let rePassword = tfRepeatPassword.text, password != "" && rePassword != "" && password == rePassword {
+            if let birthDate = stringFromDate.dateFromISO8601 {
+                if let userName = tfUserName.text, let email = tfEmail.text, let firstName = tfFirstName.text, let lastName = tfLastName.text, userName != "" && email != "" && firstName != "" && lastName != "" && (check.checkUserName(userName: userName)) {
+                    var url : String =  "/user"
+                    let param : String = "username=\(userName)&email=\(email)&firstName=\(firstName)&lastName=\(lastName)&birthDate=\(birthDate.iso8601)&password=\(password)&bio=\"\""
+                    self.networking.querryWithPost(urlString : url, param: param) { data in
                         if let data = data {
-                          do {
-                            let decoder = JSONDecoder()
-                            let parsedLogin = try decoder.decode(Login.self, from: data)
-                            if parsedLogin.success == false {
-                              self.lError.text = parsedLogin.message
-                            } else {
-                              if let token = parsedLogin.data?.token {
-                                url = "/user"
-                                self.networking.token = token
-                                self.networking.querryWithGet(urlString: url) { data in
-                                  if let data = data {
-                                    do {
-                                      let parsedUser = try decoder.decode(UserInfo.self, from: data)
-                                      if parsedUser.success == false {
-                                        self.lError.text = "Une erreur s'est produite lors de votre connexion veuillez réssayer plus tard"
-                                      } else {
-                                        if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-                                          let fileURL = documentDirectory.appendingPathComponent("token.txt")
-                                          try token.write(to: fileURL, atomically: false, encoding: .utf8)
-                                          let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                          let vc = storyboard.instantiateViewController(withIdentifier:"Main")
-                                          self.present(vc, animated: true, completion: nil)
+                            do {
+                                let decoder = JSONDecoder()
+                                let parsedRegister = try decoder.decode(Login.self, from: data)
+                                if parsedRegister.success == false {
+                                    self.lError.text = parsedRegister.message
+                                } else {
+                                    url = "/user/login"
+                                    let param : String = "username=\(userName)&password=\(password)"
+                                    self.networking.querryWithPost(urlString : url, param: param) { data in
+                                        if let data = data {
+                                            do {
+                                                let decoder = JSONDecoder()
+                                                let parsedLogin = try decoder.decode(Login.self, from: data)
+                                                if parsedLogin.success == false {
+                                                    self.lError.text = parsedLogin.message
+                                                } else {
+                                                    if let token = parsedLogin.data?.token {
+                                                        url = "/user"
+                                                        self.networking.token = token
+                                                        self.networking.querryWithGet(urlString: url) { data in
+                                                            if let data = data {
+                                                                do {
+                                                                    let parsedUser = try decoder.decode(UserInfo.self, from: data)
+                                                                    if parsedUser.success == false {
+                                                                        self.lError.text = "Une erreur s'est produite lors de votre connexion veuillez réssayer plus tard"
+                                                                    } else {
+                                                                        if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+                                                                            let fileURL = documentDirectory.appendingPathComponent("token.txt")
+                                                                            try token.write(to: fileURL, atomically: false, encoding: .utf8)
+                                                                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                                                            let vc = storyboard.instantiateViewController(withIdentifier:"Main")
+                                                                            self.present(vc, animated: true, completion: nil)
+                                                                        }
+                                                                    }
+                                                                } catch {
+                                                                    print("error:", error)
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            } catch let error as NSError {
+                                                print(error.localizedDescription)
+                                            }
                                         }
-                                      }
-                                    } catch {
-                                      print("error:", error)
                                     }
-                                  }
                                 }
-                              }
+                            } catch let error as NSError {
+                                print(error.localizedDescription)
                             }
-                          } catch let error as NSError {
-                            print(error.localizedDescription)
-                          }
                         }
-                      }
                     }
-                  } catch let error as NSError {
-                    print(error.localizedDescription)
-                  }
+                } else {
+                    lError.text = "Veuillez entrer toutes vos informations"
                 }
-              }
-            } else {
-              lError.text = "Les mots de passe ne sont pas identiques"
             }
-            } else {
-                lError.text = "Veuillez entrer toutes vos informations"
-            }
+        } else {
+            lError.text = "Les mots de passes ne sont pas les mêmes"
         }
     }
 }

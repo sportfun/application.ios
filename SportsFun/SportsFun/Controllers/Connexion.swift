@@ -11,6 +11,7 @@ import UIKit
 
 class Connexion : UIViewController {
     
+    @IBOutlet weak var lResetPwd: UILabel!
     @IBOutlet var tfUserName : UITextField!
     @IBOutlet var tfPassword : UITextField!
     @IBOutlet var bConnection : UIButton!
@@ -38,6 +39,8 @@ class Connexion : UIViewController {
         super.viewDidLoad()
         
         self.hideKeyboardWhenTappedAround()
+        bConnection.layer.cornerRadius = 10
+        bConnection.clipsToBounds = true
         if self.networking.token != "" {
             let url : String = "/user"
             self.networking.querryWithGet(urlString: url) { data in
@@ -81,6 +84,10 @@ class Connexion : UIViewController {
         }
     }
     
+    @IBAction func clicReset(sender : UIButton) {
+        self.navigationController!.pushViewController(self.storyboard!.instantiateViewController(withIdentifier: "resetPassword") as UIViewController, animated: true)
+    }
+    
     @IBAction func clicConnexion(sender : UIButton) {
         lError.text = ""
         if let userName = tfUserName.text, let password = tfPassword.text, userName != "" && password != "" {
@@ -92,7 +99,7 @@ class Connexion : UIViewController {
                         let decoder = JSONDecoder()
                         let parsedLogin = try decoder.decode(Login.self, from: data)
                         if parsedLogin.success == false {
-                            self.lError.text = "la combinaison mot de passe et/ou identifiant est incorrecte"
+                            self.lError.text = "mot de passe et/ou identifiant est incorrect"
                         } else {
                             if let token = parsedLogin.data?.token {
                                 url = "/user"

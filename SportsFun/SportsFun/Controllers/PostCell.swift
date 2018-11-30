@@ -19,6 +19,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var lContent: UILabel!
     @IBOutlet weak var bLike: UIButton!
     @IBOutlet weak var bComment: UIButton!
+    var myLike: Bool = false;
     var delegate : PostCellDelegate?
     
     func setPost(post: Post) {
@@ -27,24 +28,49 @@ class PostCell: UITableViewCell {
         lContent.text = post.content
         for like in (self.post?.likes)! {
             if like == myID {
-                bLike.setTitleColor(UIColor.orange, for: .normal)
-                bLike.tintColor = UIColor.orange;
+                myLike = true
+                bLike.setTitleColor(hexStringToUIColor(hex: "e2912e"), for: .normal)
+                bLike.tintColor = hexStringToUIColor(hex: "e2912e");
             }
         }
     }
     
     @IBAction func like(_ sender: UIButton) {
         delegate?.didTapLike(post: self.post!)
-        if sender.titleColor(for: .normal) == UIColor.orange {
+        if myLike == true {
+            myLike = false
             bLike.setTitleColor(UIColor.black, for: .normal)
             bLike.tintColor = UIColor.black;
         } else {
-            bLike.setTitleColor(UIColor.orange, for: .normal)
-            bLike.tintColor = UIColor.orange;
+            myLike = true
+            bLike.setTitleColor(hexStringToUIColor(hex: "e2912e"), for: .normal)
+            bLike.tintColor = hexStringToUIColor(hex: "e2912e");
         }
     }
     
     @IBAction func comment(_ sender: UIButton) {
         delegate?.didTapComment(post: self.post!)
+    }
+    
+    func hexStringToUIColor (hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        
+        if ((cString.count) != 6) {
+            return UIColor.gray
+        }
+        
+        var rgbValue:UInt32 = 0
+        Scanner(string: cString).scanHexInt32(&rgbValue)
+        
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
     }
 }
