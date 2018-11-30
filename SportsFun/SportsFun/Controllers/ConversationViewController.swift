@@ -2,14 +2,13 @@ import UIKit
 
 class ConversationViewController: UIViewController {
 
-  var conversation: Conversation?
-  var recipient: User?
+  var conversationId: String?
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    if let recipient = recipient {
-      navigationItem.title = recipient.firstName
+    if let id = conversationId {
+      navigationItem.title = id
     }
   }
 
@@ -24,3 +23,4 @@ class ConversationViewController: UIViewController {
    */
 
 }
+

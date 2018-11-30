@@ -48,15 +48,16 @@
 		8C0D61E021A8FB4700E9DA0A /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D121A8FB4600E9DA0A /* ScannerViewController.swift */; };
 		8C0D61E321A8FB4700E9DA0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D421A8FB4600E9DA0A /* ViewController.swift */; };
 		8C0D61E421A8FB4700E9DA0A /* AccountCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D521A8FB4600E9DA0A /* AccountCategory.swift */; };
-		8C0D61E521A8FB4700E9DA0A /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D621A8FB4700E9DA0A /* ConversationTableViewCell.swift */; };
 		8C0D61E621A8FB4700E9DA0A /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D721A8FB4700E9DA0A /* UserTableViewController.swift */; };
 		8C0D61E721A8FB4700E9DA0A /* AccountCategoryCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D821A8FB4700E9DA0A /* AccountCategoryCellTableViewCell.swift */; };
-		8C0D61E821A8FB4700E9DA0A /* ConversationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D921A8FB4700E9DA0A /* ConversationTableViewController.swift */; };
-		8C0D61E921A8FB4700E9DA0A /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61DA21A8FB4700E9DA0A /* ConversationViewController.swift */; };
 		8C0D61EA21A8FB4700E9DA0A /* AccountDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61DB21A8FB4700E9DA0A /* AccountDetails.swift */; };
 		8C0D61EB21A8FB4700E9DA0A /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61DC21A8FB4700E9DA0A /* UserTableViewCell.swift */; };
 		8C0D61ED21A8FB4700E9DA0A /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61DE21A8FB4700E9DA0A /* NewConversationViewController.swift */; };
 		8CB5C38F21A9C53E00F36D79 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB5C38E21A9C53E00F36D79 /* Category.swift */; };
+		8CEB581221B0FD8D000D2D28 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB580F21B0FD8D000D2D28 /* ConversationViewController.swift */; };
+		8CEB581321B0FD8D000D2D28 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB581021B0FD8D000D2D28 /* ConversationTableViewCell.swift */; };
+		8CEB581421B0FD8D000D2D28 /* ConversationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB581121B0FD8D000D2D28 /* ConversationsTableViewController.swift */; };
+		8CEB581621B15C09000D2D28 /* ConversationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB581521B15C09000D2D28 /* ConversationTableViewController.swift */; };
 		8CF5A81921AB124D003D08BA /* SessionNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5A81721AB124C003D08BA /* SessionNetworking.swift */; };
 		8CF5A81A21AB124D003D08BA /* SportsFunAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5A81821AB124C003D08BA /* SportsFunAPI.swift */; };
 		8CF5A81D21AB1258003D08BA /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5A81B21AB1258003D08BA /* UserProfileViewController.swift */; };
@@ -131,15 +132,16 @@
 		8C0D61D121A8FB4600E9DA0A /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScannerViewController.swift; path = SportsFun/Controllers/ScannerViewController.swift; sourceTree = SOURCE_ROOT; };
 		8C0D61D421A8FB4600E9DA0A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SportsFun/Controllers/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		8C0D61D521A8FB4600E9DA0A /* AccountCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountCategory.swift; path = SportsFun/Controllers/AccountCategory.swift; sourceTree = SOURCE_ROOT; };
-		8C0D61D621A8FB4700E9DA0A /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationTableViewCell.swift; path = SportsFun/Controllers/ConversationTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		8C0D61D721A8FB4700E9DA0A /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTableViewController.swift; path = SportsFun/Controllers/UserTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		8C0D61D821A8FB4700E9DA0A /* AccountCategoryCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountCategoryCellTableViewCell.swift; path = SportsFun/Controllers/AccountCategoryCellTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		8C0D61D921A8FB4700E9DA0A /* ConversationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationTableViewController.swift; path = SportsFun/Controllers/ConversationTableViewController.swift; sourceTree = SOURCE_ROOT; };
-		8C0D61DA21A8FB4700E9DA0A /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationViewController.swift; path = SportsFun/Controllers/ConversationViewController.swift; sourceTree = SOURCE_ROOT; };
 		8C0D61DB21A8FB4700E9DA0A /* AccountDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountDetails.swift; path = SportsFun/Controllers/AccountDetails.swift; sourceTree = SOURCE_ROOT; };
 		8C0D61DC21A8FB4700E9DA0A /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTableViewCell.swift; path = SportsFun/Controllers/UserTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		8C0D61DE21A8FB4700E9DA0A /* NewConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewConversationViewController.swift; path = SportsFun/Controllers/NewConversationViewController.swift; sourceTree = SOURCE_ROOT; };
 		8CB5C38E21A9C53E00F36D79 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		8CEB580F21B0FD8D000D2D28 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		8CEB581021B0FD8D000D2D28 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
+		8CEB581121B0FD8D000D2D28 /* ConversationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsTableViewController.swift; sourceTree = "<group>"; };
+		8CEB581521B15C09000D2D28 /* ConversationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewController.swift; sourceTree = "<group>"; };
 		8CF5A81721AB124C003D08BA /* SessionNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionNetworking.swift; path = SportsFun/Tools/SessionNetworking.swift; sourceTree = SOURCE_ROOT; };
 		8CF5A81821AB124C003D08BA /* SportsFunAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SportsFunAPI.swift; path = SportsFun/Tools/SportsFunAPI.swift; sourceTree = SOURCE_ROOT; };
 		8CF5A81B21AB1258003D08BA /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileViewController.swift; path = SportsFun/Controllers/UserProfileViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -298,9 +300,6 @@
 				8C0D61D821A8FB4700E9DA0A /* AccountCategoryCellTableViewCell.swift */,
 				8CB5C38E21A9C53E00F36D79 /* Category.swift */,
 				8C0D61DB21A8FB4700E9DA0A /* AccountDetails.swift */,
-				8C0D61D621A8FB4700E9DA0A /* ConversationTableViewCell.swift */,
-				8C0D61D921A8FB4700E9DA0A /* ConversationTableViewController.swift */,
-				8C0D61DA21A8FB4700E9DA0A /* ConversationViewController.swift */,
 				8CF5A81B21AB1258003D08BA /* UserProfileViewController.swift */,
 				8CF5A81C21AB1258003D08BA /* UserSearchResultsTableViewController.swift */,
 				8CF5A81721AB124C003D08BA /* SessionNetworking.swift */,
@@ -330,6 +329,10 @@
 				38F236F421AC562F0070EB0B /* CreateNews.swift */,
 				381DADD721860D7400B607E9 /* EditNews.swift */,
 				38A7FAC821A1BB6D00594A43 /* CommentCell.swift */,
+				8CEB581021B0FD8D000D2D28 /* ConversationTableViewCell.swift */,
+				8CEB581121B0FD8D000D2D28 /* ConversationsTableViewController.swift */,
+				8CEB580F21B0FD8D000D2D28 /* ConversationViewController.swift */,
+				8CEB581521B15C09000D2D28 /* ConversationTableViewController.swift */,
 				38A7FACC21A7023D00594A43 /* NewCommentCell.swift */,
 				38A7FAD121AAE21600594A43 /* Session.swift */,
 				38A7FAD321AAE2D000594A43 /* SummaryActivity.swift */,
@@ -533,6 +536,7 @@
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -541,6 +545,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -578,7 +583,8 @@
 			files = (
 				8C0D61E321A8FB4700E9DA0A /* ViewController.swift in Sources */,
 				8C0D61EA21A8FB4700E9DA0A /* AccountDetails.swift in Sources */,
-				8C0D61E821A8FB4700E9DA0A /* ConversationTableViewController.swift in Sources */,
+				8CEB581621B15C09000D2D28 /* ConversationTableViewController.swift in Sources */,
+				8CEB581221B0FD8D000D2D28 /* ConversationViewController.swift in Sources */,
 				381DADD821860D7400B607E9 /* EditNews.swift in Sources */,
 				380485F1205D6FEE0029A52A /* Login.swift in Sources */,
 				38A7FACE21A9C8F000594A43 /* Comment.swift in Sources */,
@@ -590,6 +596,7 @@
 				8CF5A81A21AB124D003D08BA /* SportsFunAPI.swift in Sources */,
 				386375A020A5DF370050FE91 /* Passwd.swift in Sources */,
 				38C69EA620A9ACE100340D74 /* BioGoal.swift in Sources */,
+				8CEB581321B0FD8D000D2D28 /* ConversationTableViewCell.swift in Sources */,
 				38B847FB205EACB900B02CFF /* Date.swift in Sources */,
 				38C14D462052D24900F1A7D4 /* Connexion.swift in Sources */,
 				8C0D61EB21A8FB4700E9DA0A /* UserTableViewCell.swift in Sources */,
@@ -607,13 +614,13 @@
 				386273BA20B436C000AF59F9 /* NewsFeed.swift in Sources */,
 				8CF5A82421AB127D003D08BA /* Message.swift in Sources */,
 				8C0D61E721A8FB4700E9DA0A /* AccountCategoryCellTableViewCell.swift in Sources */,
-				8C0D61E921A8FB4700E9DA0A /* ConversationViewController.swift in Sources */,
 				38A7FAD621AB14D000594A43 /* Activity.swift in Sources */,
 				8CB5C38F21A9C53E00F36D79 /* Category.swift in Sources */,
 				38C14D482052DE5E00F1A7D4 /* Inscription.swift in Sources */,
 				8C0D61E621A8FB4700E9DA0A /* UserTableViewController.swift in Sources */,
 				38C14D152052CA7300F1A7D4 /* AppDelegate.swift in Sources */,
 				8C0D61DF21A8FB4700E9DA0A /* UserSearchViewController.swift in Sources */,
+				8CEB581421B0FD8D000D2D28 /* ConversationsTableViewController.swift in Sources */,
 				3844158B20A5D0D8008A1E53 /* Identity.swift in Sources */,
 				38B847F9205EA24800B02CFF /* UserInfo.swift in Sources */,
 				38F236F721AC57020070EB0B /* ActivityCell.swift in Sources */,
@@ -622,7 +629,6 @@
 				38F236F921AC5A380070EB0B /* Game.swift in Sources */,
 				38A7FAC721A05A5200594A43 /* PostCell.swift in Sources */,
 				8C0D61E021A8FB4700E9DA0A /* ScannerViewController.swift in Sources */,
-				8C0D61E521A8FB4700E9DA0A /* ConversationTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

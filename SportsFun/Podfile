@@ -8,6 +8,7 @@ target 'SportsFun' do
   # Pods for SportsFun
   pod 'Socket.IO-Client-Swift'
   pod 'CryptoSwift'
+  pod 'SwiftyJSON'
 
   target 'SportsFunTests' do
     inherit! :search_paths

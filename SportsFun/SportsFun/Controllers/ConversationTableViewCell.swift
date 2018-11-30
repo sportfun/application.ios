@@ -4,10 +4,9 @@ class ConversationTableViewCell: UITableViewCell {
 
   // MARK: Properties
 
-  @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var photoImageView: UIImageView!
-  @IBOutlet weak var previewLabel: UILabel!
-  var messages = [Message]()
+  @IBOutlet weak var fullNameLabel: UILabel!
+  @IBOutlet weak var contentLabel: UILabel!
 
   override func awakeFromNib() {
     super.awakeFromNib()
