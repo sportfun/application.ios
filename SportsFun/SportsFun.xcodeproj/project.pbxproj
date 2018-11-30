@@ -13,6 +13,7 @@
 		381DADD821860D7400B607E9 /* EditNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381DADD721860D7400B607E9 /* EditNews.swift */; };
 		38233D2F2062B19500B07724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38233D2E2062B19500B07724 /* Main.storyboard */; };
 		3844158B20A5D0D8008A1E53 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3844158A20A5D0D8008A1E53 /* Identity.swift */; };
+		3850D0F721B01C8500156540 /* ResetPwd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3850D0F621B01C8500156540 /* ResetPwd.swift */; };
 		386273B820B3120900AF59F9 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386273B720B3120900AF59F9 /* Posts.swift */; };
 		386273BA20B436C000AF59F9 /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386273B920B436C000AF59F9 /* NewsFeed.swift */; };
 		386375A020A5DF370050FE91 /* Passwd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863759F20A5DF370050FE91 /* Passwd.swift */; };
@@ -87,6 +88,7 @@
 		381DADD721860D7400B607E9 /* EditNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNews.swift; sourceTree = "<group>"; };
 		38233D2E2062B19500B07724 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3844158A20A5D0D8008A1E53 /* Identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
+		3850D0F621B01C8500156540 /* ResetPwd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPwd.swift; sourceTree = "<group>"; };
 		386273B720B3120900AF59F9 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		386273B920B436C000AF59F9 /* NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
 		3863759F20A5DF370050FE91 /* Passwd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passwd.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				38C14D1D2052CA7300F1A7D4 /* LaunchScreen.storyboard */,
 				38C14D182052CA7300F1A7D4 /* LoginRegister.storyboard */,
 				8C0D61CD21A8FAD400E9DA0A /* NavigationBar.storyboard */,
+				38233D2E2062B19500B07724 /* Main.storyboard */,
 				8C0D61D521A8FB4600E9DA0A /* AccountCategory.swift */,
 				8C0D61D821A8FB4700E9DA0A /* AccountCategoryCellTableViewCell.swift */,
 				8CB5C38E21A9C53E00F36D79 /* Category.swift */,
@@ -271,7 +274,6 @@
 				8C0D61DC21A8FB4700E9DA0A /* UserTableViewCell.swift */,
 				8C0D61D721A8FB4700E9DA0A /* UserTableViewController.swift */,
 				8C0D61D421A8FB4600E9DA0A /* ViewController.swift */,
-				38233D2E2062B19500B07724 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -281,6 +283,7 @@
 			children = (
 				38C14D452052D24900F1A7D4 /* Connexion.swift */,
 				38C14D472052DE5E00F1A7D4 /* Inscription.swift */,
+				3850D0F621B01C8500156540 /* ResetPwd.swift */,
 				3844158A20A5D0D8008A1E53 /* Identity.swift */,
 				3863759F20A5DF370050FE91 /* Passwd.swift */,
 				38C69EA520A9ACE100340D74 /* BioGoal.swift */,
@@ -460,6 +463,7 @@
 				38A7FAD421AAE2D000594A43 /* SummaryActivity.swift in Sources */,
 				38A7FAD021A9C91400594A43 /* CommentCell.swift in Sources */,
 				38A7FAD221AAE21600594A43 /* Session.swift in Sources */,
+				3850D0F721B01C8500156540 /* ResetPwd.swift in Sources */,
 				8CF5A81921AB124D003D08BA /* SessionNetworking.swift in Sources */,
 				386273B820B3120900AF59F9 /* Posts.swift in Sources */,
 				8CF5A81D21AB1258003D08BA /* UserProfileViewController.swift in Sources */,

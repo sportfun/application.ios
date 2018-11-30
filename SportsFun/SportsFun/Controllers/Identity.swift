@@ -14,6 +14,7 @@ class Identity : UIViewController {
     @IBOutlet var tfLastName : UITextField!
     @IBOutlet var tfMail : UITextField!
     @IBOutlet var lError : UILabel!
+    @IBOutlet var bConfirm: UIButton!
     
     let networking : Networking
     var userInfo : userInfoData!
@@ -36,6 +37,8 @@ class Identity : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bConfirm.layer.cornerRadius = 10
+        bConfirm.clipsToBounds = true
         self.hideKeyboardWhenTappedAround()
         let url : String = "/user"
         self.networking.querryWithGet(urlString: url) { data in

@@ -15,6 +15,7 @@ class Inscription : UIViewController {
     @IBOutlet var tfFirstName : UITextField!
     @IBOutlet var tfLastName : UITextField!
     @IBOutlet var tfPassword : UITextField!
+    @IBOutlet var tfRepeatPassword: UITextField!
     @IBOutlet var dpBirthdate : UIDatePicker!
     @IBOutlet var bConfirm : UIButton!
     @IBOutlet var lError: UILabel!
@@ -31,6 +32,8 @@ class Inscription : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bConfirm.layer.cornerRadius = 10
+        bConfirm.clipsToBounds = true
         lError.text = ""
         self.hideKeyboardWhenTappedAround()
     }
@@ -38,8 +41,9 @@ class Inscription : UIViewController {
     @IBAction func clicConfirm(sender: UIButton) {
         let stringFromDate = dpBirthdate.date.iso8601
         lError.text = ""
-        if let birthDate = stringFromDate.dateFromISO8601 {
-            if let userName = tfUserName.text, let email = tfEmail.text, let firstName = tfFirstName.text, let lastName = tfLastName.text, let password = tfPassword.text , userName != "" && email != "" && firstName != "" && lastName != "" && password != "" && (check.checkUserName(userName: userName)) && (check.chekPassword(password: password)) {
+        if let password = tfPassword.text, let rePassword = tfRepeatPassword.text, password != "" && rePassword != "" && password == rePassword {
+            if let birthDate = stringFromDate.dateFromISO8601 {
+                if let userName = tfUserName.text, let email = tfEmail.text, let firstName = tfFirstName.text, let lastName = tfLastName.text, userName != "" && email != "" && firstName != "" && lastName != "" && (check.checkUserName(userName: userName)) {
                     var url : String =  "/user"
                     let param : String = "username=\(userName)&email=\(email)&firstName=\(firstName)&lastName=\(lastName)&birthDate=\(birthDate.iso8601)&password=\(password)&bio=\"\""
                     self.networking.querryWithPost(urlString : url, param: param) { data in
@@ -77,28 +81,31 @@ class Inscription : UIViewController {
                                                                             let vc = storyboard.instantiateViewController(withIdentifier:"Main")
                                                                             self.present(vc, animated: true, completion: nil)
                                                                         }
+                                                                    }
+                                                                } catch {
+                                                                    print("error:", error)
                                                                 }
-                                                            } catch {
-                                                                print("error:", error)
                                                             }
                                                         }
                                                     }
                                                 }
+                                            } catch let error as NSError {
+                                                print(error.localizedDescription)
                                             }
-                                        } catch let error as NSError {
-                                            print(error.localizedDescription)
                                         }
                                     }
                                 }
+                            } catch let error as NSError {
+                                print(error.localizedDescription)
                             }
-                        } catch let error as NSError {
-                            print(error.localizedDescription)
                         }
                     }
+                } else {
+                    lError.text = "Veuillez entrer toutes vos informations"
                 }
-            } else {
-                lError.text = "Veuillez entrer toutes vos informations"
             }
+        } else {
+            lError.text = "Les mots de passes ne sont pas les mêmes"
         }
     }
 }

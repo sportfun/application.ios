@@ -19,7 +19,7 @@ class ActivityCell: UITableViewCell {
             let substring = activity.date[..<index]
             let string = String(substring)
             let dateArr = string.characters.split{$0 == "-"}.map(String.init)
-            self.lType.text = "Type d'effort : \(activity.type)"
+            self.lType.text = "Score : \(activity.score)"
             self.lDate.text = "le : \(dateArr[2])/\(dateArr[1])/\(dateArr[0])"
             if activity.timeSpent < 60 {
                  self.lTemps.text = "pendant \(activity.timeSpent) secondes"
