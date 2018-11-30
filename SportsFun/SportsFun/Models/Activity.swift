@@ -26,6 +26,7 @@ struct Activity: Decodable {
     let timeSpent : Int
     let score : Int
     let date : String
+    let game : String
     
     private enum CodingKeys: String, CodingKey {
         case _id = "_id"
@@ -33,5 +34,6 @@ struct Activity: Decodable {
         case timeSpent = "timeSpent"
         case score = "score"
         case date = "date"
+        case game = "game"
     }
 }
