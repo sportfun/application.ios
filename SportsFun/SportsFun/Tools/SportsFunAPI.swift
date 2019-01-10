@@ -4,6 +4,7 @@ enum Endpoint: String {
   case userSearch = "/api/user/p/%@"
   case userFollow = "/api/user/link/%@"
   case registerCode = "/api/qr"
+  case gymSubscribe = "/api/user/sub/%@"
 }
 
 struct SportsFunAPI {
@@ -25,6 +26,10 @@ struct SportsFunAPI {
 
   static func registerCode() -> URL {
     return sportsFunURL(endpoint: Endpoint.registerCode.rawValue)
+  }
+
+  static func subscribeGym(id: String) -> URL {
+    return sportsFunURL(endpoint: String(format: Endpoint.gymSubscribe.rawValue, id))
   }
 
 }

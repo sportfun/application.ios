@@ -44,6 +44,7 @@
 		38F236F721AC57020070EB0B /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F236F621AC57020070EB0B /* ActivityCell.swift */; };
 		38F236F921AC5A380070EB0B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F236F821AC5A380070EB0B /* Game.swift */; };
 		5FA439C8C40993F4715AAFDC /* Pods_SportsFunUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9B443BC9E27D0E6A5B7B80 /* Pods_SportsFunUITests.framework */; };
+		8C0B43BE21E463A100984689 /* GymScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0B43BD21E463A100984689 /* GymScannerViewController.swift */; };
 		8C0D61CF21A8FAD400E9DA0A /* NavigationBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0D61CD21A8FAD400E9DA0A /* NavigationBar.storyboard */; };
 		8C0D61DF21A8FB4700E9DA0A /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D021A8FB4600E9DA0A /* UserSearchViewController.swift */; };
 		8C0D61E021A8FB4700E9DA0A /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0D61D121A8FB4600E9DA0A /* ScannerViewController.swift */; };
@@ -129,6 +130,7 @@
 		42305E5AE7C2B32DD08285A8 /* Pods-SportsFunTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsFunTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportsFunTests/Pods-SportsFunTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5D9B443BC9E27D0E6A5B7B80 /* Pods_SportsFunUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsFunUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83826FAA2122EDF193F24930 /* Pods_SportsFunTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsFunTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0B43BD21E463A100984689 /* GymScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GymScannerViewController.swift; path = SportsFun/Controllers/GymScannerViewController.swift; sourceTree = SOURCE_ROOT; };
 		8C0D61CE21A8FAD400E9DA0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NavigationBar.storyboard; sourceTree = "<group>"; };
 		8C0D61D021A8FB4600E9DA0A /* UserSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSearchViewController.swift; path = SportsFun/Controllers/UserSearchViewController.swift; sourceTree = SOURCE_ROOT; };
 		8C0D61D121A8FB4600E9DA0A /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScannerViewController.swift; path = SportsFun/Controllers/ScannerViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -320,6 +322,7 @@
 		38C14D442052CBE600F1A7D4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8C0B43BD21E463A100984689 /* GymScannerViewController.swift */,
 				38C14D452052D24900F1A7D4 /* Connexion.swift */,
 				38C14D472052DE5E00F1A7D4 /* Inscription.swift */,
 				3850D0F621B01C8500156540 /* ResetPwd.swift */,
@@ -587,6 +590,7 @@
 				8C0D61E321A8FB4700E9DA0A /* ViewController.swift in Sources */,
 				8C0D61EA21A8FB4700E9DA0A /* AccountDetails.swift in Sources */,
 				8CEB581621B15C09000D2D28 /* ConversationTableViewController.swift in Sources */,
+				8C0B43BE21E463A100984689 /* GymScannerViewController.swift in Sources */,
 				8CEB581221B0FD8D000D2D28 /* ConversationViewController.swift in Sources */,
 				381DADD821860D7400B607E9 /* EditNews.swift in Sources */,
 				380485F1205D6FEE0029A52A /* Login.swift in Sources */,

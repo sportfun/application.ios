@@ -366,12 +366,53 @@
                                             <segue destination="1Ra-MI-NLf" kind="show" id="7cC-W1-vAm"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="8sY-RQ-zJz">
+                                        <rect key="frame" x="0.0" y="228" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8sY-RQ-zJz" id="bxX-zC-3d4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cycle" translatesAutoresizingMaskIntoConstraints="NO" id="sIE-Mq-pBx">
+                                                    <rect key="frame" x="10" y="20" width="70" height="59.5"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="neQ-wU-A6i"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SALLE DE SPORT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cv1-Bw-x1f">
+                                                    <rect key="frame" x="100" y="21" width="156.5" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lier une salle de sport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOp-6t-Qdu">
+                                                    <rect key="frame" x="110" y="58.5" width="169" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sIE-Mq-pBx" firstAttribute="leading" secondItem="bxX-zC-3d4" secondAttribute="leading" constant="10" id="5OH-65-51K"/>
+                                                <constraint firstAttribute="bottom" secondItem="sIE-Mq-pBx" secondAttribute="bottom" constant="20" id="FPF-Re-sBk"/>
+                                                <constraint firstItem="cv1-Bw-x1f" firstAttribute="leading" secondItem="sIE-Mq-pBx" secondAttribute="trailing" constant="20" id="I1i-x9-v0Z"/>
+                                                <constraint firstItem="cv1-Bw-x1f" firstAttribute="top" secondItem="bxX-zC-3d4" secondAttribute="topMargin" constant="10" id="Igj-KK-YrP"/>
+                                                <constraint firstItem="sIE-Mq-pBx" firstAttribute="top" secondItem="bxX-zC-3d4" secondAttribute="top" constant="20" id="LtV-xD-Vc2"/>
+                                                <constraint firstItem="WOp-6t-Qdu" firstAttribute="leading" secondItem="sIE-Mq-pBx" secondAttribute="trailing" constant="30" id="eQi-UZ-Fcp"/>
+                                                <constraint firstAttribute="bottom" secondItem="WOp-6t-Qdu" secondAttribute="bottom" constant="20" id="hDu-8i-eJB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="wN6-40-p3s" kind="presentation" id="CVZ-ko-ZVJ"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Information Application" id="yAh-8T-MyC">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gBr-j1-xTa">
-                                        <rect key="frame" x="0.0" y="256" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="356" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gBr-j1-xTa" id="1Ev-L6-Qyp">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
@@ -416,7 +457,7 @@
                             <tableViewSection headerTitle="Déconnexion" id="bUC-OY-Wbq">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="QbV-Cz-5Lc">
-                                        <rect key="frame" x="0.0" y="384" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="484" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QbV-Cz-5Lc" id="Vuc-KR-MNZ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
@@ -479,6 +520,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GvJ-iE-qyv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-255" y="457"/>
+        </scene>
+        <!--Gym Scanner View Controller-->
+        <scene sceneID="Ja7-El-Sql">
+            <objects>
+                <viewController id="b6p-S6-8eA" customClass="GymScannerViewController" customModule="SportsFun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nee-5L-xbv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4yM-3q-b9W"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7EV-6K-ulh">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DcD-CF-eVM">
+                            <connections>
+                                <action selector="cancel:" destination="b6p-S6-8eA" id="j6W-ha-EMy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="39A-95-Gvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="456.52173913043481"/>
         </scene>
         <!--Paramètres-->
         <scene sceneID="1kg-N7-Evq">
@@ -1265,7 +1328,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uC3-qD-x7B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1634" y="457"/>
+            <point key="canvasLocation" x="2572" y="456.52173913043481"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Mp7-L2-y8b">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wN6-40-p3s" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HRB-R4-QKn">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="b6p-S6-8eA" kind="relationship" relationship="rootViewController" id="Cfm-Jb-mC1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VPl-bj-YQy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="552.79999999999995" y="456.52173913043481"/>
         </scene>
     </scenes>
     <resources>
