@@ -110,7 +110,7 @@ class GymScannerViewController: UIViewController, AVCaptureMetadataOutputObjects
 
   func handleMetadataObject(_ metadataObject: String) {
     captureSession.stopRunning()
-    if (!metadataObject.hasPrefix("sportsfun:")) {
+    if (!metadataObject.hasPrefix("sportsfun-join:")) {
       showAlert(title: "Erreur", message: "Le QR code n'est pas valide", handler: {
         action in self.captureSession.startRunning()
       })
