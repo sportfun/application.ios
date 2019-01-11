@@ -1,38 +1,85 @@
 import UIKit
+import SocketIO
+import SwiftyJSON
 
 class ConversationTableViewController: UITableViewController {
+
+  var manager: SocketManager!
+  var socket: SocketIOClient!
+  var conversationId: String?
+  var messages: [(String)] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+      manager = SocketManager(socketURL: URL(string: "http://api.sportsfun.shr.ovh:8080")!, config: [.compress])
+      socket = manager.defaultSocket
+      socket.on(clientEvent: .connect) {data, ack in
+        let networking = Networking(token: "")
+        do {
+          if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileURL = documentDirectory.appendingPathComponent("token.txt")
+            let token = try String(contentsOf: fileURL)
+            networking.token = token
+            self.socket.on("registerMessages") {data, ack in
+              self.loadConversation()
+            }
+            self.socket.emit("registerMessages", ["token": token])
+          }
+        } catch {
+          print("error:", error)
+        }
+      }
+      socket.connect()
     }
+
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+  func addMessage(data: JSON) {
+    messages.append(data["content"].string ?? "")
+    self.tableView.reloadData()
+  }
+
+  func loadConversation() {
+    socket.on("message") {data, ack in
+      let newMessage = JSON(data)
+      print(newMessage)
+      self.addMessage(data: newMessage)
+    }
+    socket.on("conversation") {data, ack in
+      let data = JSON(data)
+      let newMessages = data[0]["messages"]
+      for (_,subJson):(String, JSON) in newMessages {
+        self.addMessage(data: subJson)
+      }
+    }
+    socket.emit("conversation", ["id": conversationId])
+  }
+
+  override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return messages.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cellIdentifier = "MessageTableViewCell"
 
-        // Configure the cell...
-
-        return cell
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MessageTableViewCell else {
+      fatalError("The dequeued cell is not an instance of ConversationTableViewCell.")
     }
-    */
+
+    let message = messages[indexPath.row]
+    //cell.fullNameLabel.text = snippet.firstName + " " + snippet.lastName
+    cell.contentLabel.text = message
+
+    return cell
+  }
 
     /*
     // Override to support conditional editing of the table view.
@@ -50,7 +97,7 @@ class ConversationTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 

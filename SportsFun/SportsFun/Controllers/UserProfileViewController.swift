@@ -45,4 +45,16 @@ class UserProfileViewController: UIViewController {
     usernameLabel.text = user.username
   }
 
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    super.prepare(for: segue, sender: sender)
+
+    let destinationNavigationController = segue.destination as! UINavigationController
+
+    guard let newConversationTableViewController = destinationNavigationController.topViewController as? NewConversationViewController else {
+      fatalError("Unexpected destination: \(segue.destination)")
+    }
+
+    newConversationTableViewController.userId = user.id
+  }
+
 }

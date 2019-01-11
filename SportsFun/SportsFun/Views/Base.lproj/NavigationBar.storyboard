@@ -142,7 +142,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="bAR-zk-GyR">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="Ci3-wz-IWp" kind="presentation" id="yFd-hR-lQp"/>
+                                <segue destination="5dN-Zd-4iQ" kind="presentation" identifier="NewConversation" id="ukD-yG-CgO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -160,6 +160,7 @@
         <!--New Conversation-->
         <scene sceneID="5kO-22-EkI">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HTX-uf-Vko" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="wLl-ft-Vzi" userLabel="New Conversation" customClass="NewConversationViewController" customModule="SportsFun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pw3-0i-x5K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -192,12 +193,17 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Envoyer" id="ujt-Vh-Rdb">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="sendMessage:" destination="wLl-ft-Vzi" id="AAo-W8-fH7"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="messageTextField" destination="x4S-cF-nsC" id="60N-fZ-7WB"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HTX-uf-Vko" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-882" y="9379"/>
+            <point key="canvasLocation" x="57" y="8654"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zkh-OV-Nne">
@@ -282,22 +288,22 @@
             <point key="canvasLocation" x="-881" y="5293"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="yGS-4v-6Pk">
+        <scene sceneID="8fk-74-Bc5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ci3-wz-IWp" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5dN-Zd-4iQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2GQ-rX-bYW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eAO-h8-SPY">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="wLl-ft-Vzi" kind="relationship" relationship="rootViewController" id="JV5-5H-JFs"/>
+                        <segue destination="wLl-ft-Vzi" kind="relationship" relationship="rootViewController" id="hTy-9d-pZK"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vRj-cD-dbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7pq-Et-mkn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-882" y="8579"/>
+            <point key="canvasLocation" x="-882" y="8654"/>
         </scene>
     </scenes>
     <resources>

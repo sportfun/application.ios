@@ -1231,7 +1231,7 @@
         <!--Conversations-->
         <scene sceneID="Mee-yI-JYw">
             <objects>
-                <tableViewController id="Bw5-et-PMQ" userLabel="Conversations" customClass="ConversationTableViewController" customModule="SportsFun" sceneMemberID="viewController">
+                <tableViewController id="Bw5-et-PMQ" userLabel="Conversations" customClass="ConversationsTableViewController" customModule="SportsFun" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VJj-WF-6Mo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1268,7 +1268,7 @@
                                     <outlet property="contentLabel" destination="i2L-We-W9l" id="Eua-N1-hLF"/>
                                     <outlet property="fullNameLabel" destination="C0a-Iw-Abe" id="anL-p2-oow"/>
                                     <outlet property="photoImageView" destination="8ns-Am-tT8" id="vJG-LP-xlv"/>
-                                    <segue destination="BDa-eo-oIB" kind="show" id="kFX-5w-IRH"/>
+                                    <segue destination="BDa-eo-oIB" kind="show" identifier="ShowConversation" id="kFX-5w-IRH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1292,13 +1292,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HRf-ux-Ymf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageTableViewCell" id="HRf-ux-Ymf" customClass="MessageTableViewCell" customModule="SportsFun" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HRf-ux-Ymf" id="rEV-PR-pTI">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7P-eG-n1h">
+                                            <rect key="frame" x="38" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contentLabel" destination="m7P-eG-n1h" id="GsG-1N-vUU"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
